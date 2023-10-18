@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Around</title>
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <div class="logo">
+          <img
+            src="./images/logo.png"
+            alt="Logo da Around"
+            class="logo__header-image"
+          />
+        </div>
+        <div class="header__line"></div>
+      </header>
+      <section class="profile">
+        <div class="profile__container">
+          <img
+            src="./images/profile-pic.png"
+            alt="Imagem de perfil do usuário"
+            class="profile__picture"
+          />
+          <div class="profile__input">
+            <div class="profile__text-button">
+              <h1 class="profile__name">Jacques Cousteau</h1>
+              <button type="button" class="profile__edit-button">
+                <img
+                  src="./images/Edit-Button.png"
+                  alt="Botão de editar perfil"
+                />
+              </button>
+            </div>
+
+            <h2 class="profile__about">Explorar</h2>
+          </div>
+        </div>
+        <button type="button" class="profile__add-button">
+          <img src="./images/Add Button.png" alt="Botão de adicionar" />
+        </button>
+        <div class="popup">
+          <div class="popup__container">
+            <button type="button" class="popup__close-button">
+              <img src="./images/Close Icon.png" alt="Botão de fechar" />
+            </button>
+            <h3 class="popup__title">Editar perfil</h3>
+            <form class="popup__form" name="new">
+              <input
+                type="text"
+                name="name"
+                class="popup__input popup__input_type_name"
+                placeholder="Nome"
+              />
+              <div class="popup__line"></div>
+              <input
+                type="text"
+                name="about"
+                class="popup__input popup__input_type_about"
+                placeholder="Sobre mim"
+              />
+              <div class="popup__line"></div>
+              <button type="submit" class="popup__submit-button">Salvar</button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section class="elements">
+        <div class="elements__cards">
+          <img
+            src="./images/card__image1.png"
+            alt="Vale de Yosemite"
+            class="elements__card-image"
+          />
+          <div class="elements__content">
+            <p class="elements__text">Vale de Yosemite</p>
+            <button type="button" class="elements__like-button"></button>
+          </div>
+        </div>
+        <div class="elements__cards">
+          <img
+            src="./images/card__image2.png"
+            alt="Lago Louise"
+            class="elements__card-image"
+          />
+          <div class="elements__content">
+            <p class="elements__text">Lago Louise</p>
+            <button type="button" class="elements__like-button"></button>
+          </div>
+        </div>
+        <div class="elements__cards">
+          <img
+            src="./images/card__image3.png"
+            alt="Montanhas Carecas"
+            class="elements__card-image"
+          />
+          <div class="elements__content">
+            <p class="elements__text block">Montanhas Carecas</p>
+            <button type="button" class="elements__like-button"></button>
+          </div>
+        </div>
+        <div class="elements__cards">
+          <img
+            src="./images/card__image4.png"
+            alt="Latemar"
+            class="elements__card-image"
+          />
+          <div class="elements__content">
+            <p class="elements__text">Latemar</p>
+            <button type="button" class="elements__like-button"></button>
+          </div>
+        </div>
+        <div class="elements__cards">
+          <img
+            src="./images/card__image5.png"
+            alt="Vanoise National Park"
+            class="elements__card-image"
+          />
+          <div class="elements__content">
+            <p class="elements__text block">Vanoise National Park</p>
+            <button type="button" class="elements__like-button"></button>
+          </div>
+        </div>
+        <div class="elements__cards">
+          <img
+            src="./images/card__image6.png"
+            alt="Lago di Braies"
+            class="elements__card-image"
+          />
+          <div class="elements__content">
+            <p class="elements__text">Lago di Braies</p>
+            <button type="button" class="elements__like-button"></button>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <h2 class="footer__content">&#169; 2023. Vinícíus Bueno</h2>
+      </footer>
+    </div>
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>

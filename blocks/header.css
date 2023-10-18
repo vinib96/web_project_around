@@ -1,0 +1,12 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  row-gap: 41px;
+}
+
+.header__line {
+  margin: 0 auto;
+  width: 69%;
+  height: 1px;
+  background: #545454;
+}

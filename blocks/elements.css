@@ -1,0 +1,50 @@
+.elements {
+  display: flex;
+  width: 69%;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  font-family: Inter;
+  color: #000;
+  column-gap: 17px;
+  row-gap: 20px;
+}
+
+.elements__cards {
+  max-width: 282px;
+}
+
+.elements__content {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+}
+
+.elements__text {
+  font-size: 24px;
+  font-weight: 900;
+}
+.block {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.elements__like-button {
+  display: inline-block;
+  align-self: center;
+  border: none;
+  outline: none;
+  background: url(../images/like__button.png) center no-repeat;
+
+  width: 21px;
+  height: 19px;
+  background-size: 100%;
+  transition: 0.3s;
+}
+
+.elements__like-button:hover {
+  background-color: #000;
+}

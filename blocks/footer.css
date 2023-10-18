@@ -1,0 +1,13 @@
+.footer {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.footer__content {
+  margin: 60px auto;
+
+  color: #545454;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+}
