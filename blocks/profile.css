@@ -35,6 +35,7 @@
 
 .profile__text-button {
   display: flex;
+  align-items: baseline;
   gap: 18px;
 }
 
@@ -53,11 +54,11 @@
 }
 
 .profile__edit-button {
-  align-self: center;
   padding: 0;
   height: 24px;
   background: none;
   border: none;
+  cursor: pointer;
   transition: 0.2s;
 }
 
@@ -71,6 +72,7 @@
   align-self: center;
   background: none;
   border: none;
+  cursor: pointer;
   transition: 0.2s;
 }
 

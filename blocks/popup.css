@@ -32,10 +32,11 @@
 
 .popup__close-button {
   position: absolute;
+  cursor: pointer;
   background: none;
   border: none;
   bottom: 100%;
-  right: 0;
+  right: -10%;
   transition: 0.2s;
 }
 
@@ -54,6 +55,7 @@
 .popup__submit-button {
   width: 100%;
   height: 50.152px;
+  cursor: pointer;
   background-color: #000;
   border-radius: 2px;
   color: white;
