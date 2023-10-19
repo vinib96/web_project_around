@@ -1,11 +1,11 @@
 .logo {
   display: flex;
+  margin: 45px 0;
 }
 
 .logo__header-image {
   width: 173px;
   height: 33px;
-  margin: 45px 0 0 200px;
 }
 
 @media screen and (max-width: 880px) {

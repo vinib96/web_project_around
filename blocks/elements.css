@@ -1,6 +1,7 @@
 .elements {
   display: flex;
   width: 69%;
+  max-width: 880px;
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
@@ -47,4 +48,19 @@
 
 .elements__like-button:hover {
   background-color: #000;
+}
+
+@media screen and (max-width: 880px) {
+  .elements {
+    width: 90%;
+  }
+
+  .elements__cards {
+    width: 100%;
+    max-width: none;
+  }
+
+  .elements__card-image {
+    width: 100%;
+  }
 }

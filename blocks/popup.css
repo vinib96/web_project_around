@@ -43,15 +43,6 @@
   opacity: 0.5;
 }
 
-.popup__content {
-  display: flex;
-  flex-direction: column;
-}
-
-.profile__input {
-  border: none;
-}
-
 .popup__line {
   margin-bottom: 30px;
   width: 100%;
