@@ -47,49 +47,57 @@
           />
         </button>
         <div class="popup">
-          <div class="popup__container">
+          <div class="teste">
             <button type="button" class="popup__close-button">
               <img src="./images/Close__Icon.png" alt="Botão de fechar" />
             </button>
-            <h3 class="popup__title">Editar perfil</h3>
-            <form class="popup__form" name="new">
-              <input
-                type="text"
-                name="name"
-                class="popup__input popup__input_type_name"
-                placeholder="Nome"
-              />
-              <div class="popup__line"></div>
-              <input
-                type="text"
-                name="about"
-                class="popup__input popup__input_type_about"
-                placeholder="Sobre mim"
-              />
-              <div class="popup__line"></div>
-              <button type="submit" class="popup__submit-button">Salvar</button>
-            </form>
+            <div class="popup__container">
+              <h3 class="popup__title">Editar perfil</h3>
+              <form class="popup__form" name="new">
+                <input
+                  type="text"
+                  name="name"
+                  class="popup__input popup__input_type_name"
+                  placeholder="Nome"
+                />
+                <div class="popup__line"></div>
+                <input
+                  type="text"
+                  name="about"
+                  class="popup__input popup__input_type_about"
+                  placeholder="Sobre mim"
+                />
+                <div class="popup__line"></div>
+                <button type="submit" class="popup__submit-button">
+                  Salvar
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
       <section class="elements">
         <div class="elements__cards">
-          <img
-            src="./images/card__image1.png"
-            alt="Vale de Yosemite"
-            class="elements__card-image"
-          />
+          <figure class="elements__figure">
+            <img
+              src="./images/card__image1.png"
+              alt="Vale de Yosemite"
+              class="elements__card-image"
+            />
+          </figure>
           <div class="elements__content">
             <p class="elements__text">Vale de Yosemite</p>
             <button type="button" class="elements__like-button"></button>
           </div>
         </div>
         <div class="elements__cards">
-          <img
-            src="./images/card__image2.png"
-            alt="Lago Louise"
-            class="elements__card-image"
-          />
+          <figure class="elements__figure">
+            <img
+              src="./images/card__image2.png"
+              alt="Lago Louise"
+              class="elements__card-image"
+            />
+          </figure>
           <div class="elements__content">
             <p class="elements__text">Lago Louise</p>
             <button type="button" class="elements__like-button"></button>
@@ -141,9 +149,7 @@
         </div>
       </section>
 
-      <footer class="footer">
-        <h2 class="footer__content">&#169; 2023. Vinícíus Bueno</h2>
-      </footer>
+      <footer class="footer">&#169; 2023. Vinícíus Bueno</footer>
     </div>
     <script src="./scripts/script.js"></script>
   </body>

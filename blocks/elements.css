@@ -11,6 +11,12 @@
   row-gap: 20px;
 }
 
+.elements__figure {
+  line-height: 0;
+  margin: 0;
+  object-fit: cover;
+}
+
 .elements__cards {
   max-width: 282px;
 }
@@ -38,8 +44,8 @@
   align-self: center;
   border: none;
   outline: none;
-  background: url(../images/like__button.png) center no-repeat;
-
+  cursor: pointer;
+  background: url(../images/like__button.svg) center no-repeat;
   width: 21px;
   height: 19px;
   background-size: 100%;
@@ -47,7 +53,7 @@
 }
 
 .elements__like-button:hover {
-  background-color: #000;
+  background: url(../images/like__button__hover.png) center no-repeat;
 }
 
 @media screen and (max-width: 880px) {
