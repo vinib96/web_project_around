@@ -7,20 +7,20 @@ const inputName = document.querySelector(".popup__input_type_name");
 const inputAbout = document.querySelector(".popup__input_type_about");
 const form = document.querySelector(".popup__form");
 
-openFormButton.addEventListener("click", () => {
+openFormButton.addEventListener("click", function () {
+  popup.classList.add("popup__opened");
   inputName.value = profileName.textContent;
   inputAbout.value = profileAbout.textContent;
-  popup.style.display = "block";
 });
 
-closeButton.addEventListener("click", () => {
-  popup.style.display = "none";
+closeButton.addEventListener("click", function () {
+  popup.classList.remove("popup__opened");
 });
 
 function handleFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = inputName.value;
   profileAbout.textContent = inputAbout.value;
-  popup.style.display = "none";
+  popup.classList.remove("popup__opened");
 }
 form.addEventListener("submit", handleFormSubmit);
