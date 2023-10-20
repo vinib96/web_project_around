@@ -4,3 +4,4 @@
 <p>Vale ressaltar que todas as informações relacionadas ao design do site foram obtidas por meio da utilização do Figma e a metodologia utilizada foi "BEM".</p>
 <p> Para acessar a página basta acessar https://vinib96.github.io/web_project_around/ </p>
 <p>Futuramente será possível adicionar funcionalidades ao botões "curtir" e "adicionar".</p>
+![1_i8-u-V8LTTbQwTeUwLI_BQ](https://github.com/vinib96/web_project_around/assets/141737376/91198138-90d9-4093-b727-f565d2fbe7bf)
