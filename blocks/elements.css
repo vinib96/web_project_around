@@ -1,7 +1,8 @@
-.elements {
+.elements__container {
   display: flex;
   width: 69%;
   max-width: 880px;
+  padding: 0;
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
