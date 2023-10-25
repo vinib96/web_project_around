@@ -1,3 +1,6 @@
+.elements {
+  margin: 0 auto;
+}
 .elements__container {
   display: flex;
   width: 69%;
@@ -59,7 +62,7 @@
 
 @media screen and (max-width: 880px) {
   .elements {
-    width: 90%;
+    width: 100%;
   }
 
   .elements__cards {
