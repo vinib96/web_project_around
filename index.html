@@ -76,7 +76,7 @@
           </div>
         </div>
         <div class="popup popup__add-cards">
-          <div class="popup__container">
+          <div class="popup__container" id="cards-form">
             <button type="button" class="popup__close-button popup__close-add">
               <img src="./images/Close__Icon.png" alt="Botão de fechar" />
             </button>
@@ -106,23 +106,28 @@
         </div>
       </section>
       <section class="elements">
-        <template>
-          <ul class="elements__container">
-            <li class="elements__cards">
-              <figure class="elements__figure">
-                <img
-                  src="./images/card__image1.png"
-                  alt="Vale de Yosemite"
-                  class="elements__card-image"
-                />
-              </figure>
-              <div class="elements__content">
-                <p class="elements__text">Vale de Yosemite</p>
-                <button type="button" class="elements__like-button"></button>
-              </div>
-            </li>
-          </ul>
+        <template id="cards">
+          <li class="elements__cards">
+            <figure class="elements__figure">
+              <button type="button" id="trash" class="elements__trash">
+                <img src="./images/Trash.png" alt="Lixo" />
+              </button>
+              <img src="" alt="" class="elements__card-image" />
+            </figure>
+            <div class="elements__content">
+              <p class="elements__text block"></p>
+              <button
+                type="button"
+                class="elements__like-button"
+                id="like"
+              ></button>
+            </div>
+          </li>
         </template>
+        <ul class="elements__container"></ul>
+        <div class="popup popup__full-image">
+          <img src="" alt="" class="elements__card-image" />
+        </div>
       </section>
 
       <footer class="footer">&#169; 2023. Vinícíus Bueno</footer>
