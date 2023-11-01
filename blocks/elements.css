@@ -46,6 +46,12 @@
   border-radius: 10px 10px 0 0;
 }
 
+.elements__full-image {
+  max-width: 75vw;
+  max-height: 75vh;
+  grid-area: img;
+}
+
 .elements__content {
   display: flex;
   justify-content: space-between;
@@ -58,6 +64,17 @@
   font-size: 24px;
   font-weight: 900;
 }
+
+.elements__image-text {
+  margin-top: 10px;
+  color: #fff;
+
+  font-size: 12px;
+
+  font-weight: 400;
+  grid-area: txt;
+}
+
 .block {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -92,10 +109,6 @@
 @media screen and (max-width: 880px) {
   .elements {
     width: 100%;
-  }
-
-  .elements__cards {
-    max-width: none;
   }
 
   .elements__card-image {

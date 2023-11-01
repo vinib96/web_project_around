@@ -10,7 +10,6 @@
   opacity: 0;
   transition: visibility 0s linear 0.5s, opacity 0.5s linear;
 }
-
 #profile:hover > .popup__container {
   visibility: visible;
   opacity: 1;
@@ -40,6 +39,16 @@
   grid-template-areas:
     ". button"
     "form .";
+}
+
+.popup__iamge-container {
+  max-width: 470px;
+  margin: 10% auto;
+  display: grid;
+  grid-template-areas:
+    ". button"
+    "img ."
+    "txt .";
 }
 
 .popup__form-container {
