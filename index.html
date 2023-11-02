@@ -46,74 +46,18 @@
             alt="Botão de adicionar"
           />
         </button>
-        <div class="popup popup__profile" id="profile">
-          <div class="popup__container">
-            <button type="button" class="popup__close-button">
-              <img src="./images/Close__Icon.png" alt="Botão de fechar" />
-            </button>
-            <div class="popup__form-container">
-              <h3 class="popup__title">Editar perfil</h3>
-              <form class="popup__form" name="new">
-                <input
-                  type="text"
-                  name="name"
-                  class="popup__input popup__input_type_name"
-                  placeholder="Nome"
-                />
-                <div class="popup__line"></div>
-                <input
-                  type="text"
-                  name="about"
-                  class="popup__input popup__input_type_about"
-                  placeholder="Sobre mim"
-                />
-                <div class="popup__line"></div>
-                <button type="submit" class="popup__submit-button">
-                  Salvar
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class="popup popup__add-cards">
-          <div class="popup__container" id="cards-form">
-            <button type="button" class="popup__close-button popup__close-add">
-              <img src="./images/Close__Icon.png" alt="Botão de fechar" />
-            </button>
-            <div class="popup__form-container">
-              <h3 class="popup__title">Novo local</h3>
-              <form class="popup__form" name="new">
-                <input
-                  type="text"
-                  name="title"
-                  class="popup__input popup__input_type_title"
-                  placeholder="Título"
-                />
-                <div class="popup__line"></div>
-                <input
-                  type="text"
-                  name="image"
-                  class="popup__input popup__input_type_image"
-                  placeholder="Link de imagem"
-                />
-                <div class="popup__line"></div>
-                <button type="submit" class="popup__submit-button">
-                  Criar
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
       </section>
       <section class="elements">
         <template id="cards">
           <li class="elements__cards">
-            <figure class="elements__figure">
+            <div class="elements__figure-container">
               <button type="button" id="trash" class="elements__trash">
                 <img src="./images/Trash.png" alt="Lixo" />
               </button>
-              <img src="" alt="" class="elements__card-image" />
-            </figure>
+              <figure class="elements__figure">
+                <img src="" alt="" class="elements__card-image" />
+              </figure>
+            </div>
             <div class="elements__content">
               <p class="elements__text block"></p>
               <button
@@ -125,17 +69,73 @@
           </li>
         </template>
         <ul class="elements__container"></ul>
-        <div class="popup popup__full-image">
-          <div class="popup__iamge-container" id="image">
-            <button type="button" class="popup__close-button" id="close-image">
-              <img src="./images/Close__Icon.png" alt="Botão de fechar" />
-            </button>
+      </section>
+      <div class="popup popup__profile" id="profile">
+        <div class="popup__container">
+          <button type="button" class="popup__close-button">
+            <img src="./images/Close__Icon.png" alt="Botão de fechar" />
+          </button>
+          <div class="popup__form-container">
+            <h3 class="popup__title">Editar perfil</h3>
+            <form class="popup__form" name="new">
+              <input
+                type="text"
+                name="name"
+                class="popup__input popup__input_type_name"
+                placeholder="Nome"
+              />
+              <div class="popup__line"></div>
+              <input
+                type="text"
+                name="about"
+                class="popup__input popup__input_type_about"
+                placeholder="Sobre mim"
+              />
+              <div class="popup__line"></div>
+              <button type="submit" class="popup__submit-button">Salvar</button>
+            </form>
           </div>
         </div>
-      </section>
-
+      </div>
+      <div class="popup popup__add-cards">
+        <div class="popup__container" id="cards-form">
+          <button type="button" class="popup__close-button popup__close-add">
+            <img src="./images/Close__Icon.png" alt="Botão de fechar" />
+          </button>
+          <div class="popup__form-container">
+            <h3 class="popup__title">Novo local</h3>
+            <form class="popup__form" name="new">
+              <input
+                type="text"
+                name="title"
+                class="popup__input popup__input_type_title"
+                placeholder="Título"
+              />
+              <div class="popup__line"></div>
+              <input
+                type="text"
+                name="image"
+                class="popup__input popup__input_type_image"
+                placeholder="Link de imagem"
+              />
+              <div class="popup__line"></div>
+              <button type="submit" class="popup__submit-button">Criar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="popup popup__full-image">
+        <div class="popup__container popup__container_image" id="image">
+          <button type="button" class="popup__close-button" id="close-image">
+            <img src="./images/Close__Icon.png" alt="Botão de fechar" />
+          </button>
+          <img src="" alt="" class="elements__full-image" />
+          <p class="elements__image-text"></p>
+        </div>
+      </div>
       <footer class="footer">&#169; 2023. Vinícíus Bueno</footer>
     </div>
+
     <script src="./scripts/script.js"></script>
   </body>
 </html>

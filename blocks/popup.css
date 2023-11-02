@@ -1,35 +1,16 @@
 .popup {
-  display: none;
   background: rgba(0, 0, 0, 0.5);
+  font-family: Inter;
   position: fixed;
   inset: 0;
-}
-
-#profile > .popup__container {
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s linear 0.5s, opacity 0.5s linear;
-}
-#profile:hover > .popup__container {
-  visibility: visible;
-  opacity: 1;
-  transition-delay: 0s;
-}
-
-.popup__add-cards > .popup__container {
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s linear 0.5s, opacity 0.5s linear;
-}
-
-.popup__add-cards:hover > .popup__container {
-  visibility: visible;
-  opacity: 1;
-  transition-delay: 0s;
+  transition: opacity 1s ease-in, visibility 1s ease-in;
 }
 
 .popup__opened {
-  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 
 .popup__container {
@@ -41,10 +22,8 @@
     "form .";
 }
 
-.popup__iamge-container {
-  max-width: 470px;
-  margin: 10% auto;
-  display: grid;
+.popup__container_image {
+  max-width: fit-content;
   grid-template-areas:
     ". button"
     "img ."
@@ -116,6 +95,13 @@
       "button"
       "form";
     width: 90%;
+  }
+  .popup__container_image {
+    max-width: fit-content;
+    grid-template-areas:
+      ". button"
+      "img ."
+      "txt .";
   }
   .popup__form-container {
     width: unset;

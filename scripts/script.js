@@ -95,31 +95,27 @@ function addCard(cards) {
   const cardImage = document.querySelector(".elements__card-image");
   cardImage.addEventListener("click", () => {
     fullImage.classList.add("popup__opened");
-    const imageContainer = document.createElement("img");
-    imageContainer.classList.add("elements__full-image");
-    imageContainer.src = cards.link;
-    document.getElementById("image").appendChild(imageContainer);
-    const imageText = document.createElement("p");
-    imageText.classList.add("elements__image-text");
-    imageText.textContent = cards.name;
-    document.getElementById("image").appendChild(imageText);
+    const imageElement = document.querySelector(".elements__full-image");
+    imageElement.src = cards.link;
+    imageElement.alt = cards.name;
+    const textElement = document.querySelector(".elements__image-text");
+    textElement.textContent = cards.name;
     const closeImage = document.querySelector("#close-image");
     closeImage.addEventListener("click", () => {
       fullImage.classList.remove("popup__opened");
     });
   });
-
   return cardElement;
 }
 
 initialCards.forEach((card) => {
   const cardElement = addCard(card);
-  cardsContainer.prepend(cardElement);
+  cardsContainer.append(cardElement);
 });
 
 function handleCardSubmit(evt) {
   evt.preventDefault();
-  function createCard(cards) {
+  function createCard() {
     const cardTemplate = document.querySelector("#cards").content;
     const cardElement = cardTemplate
       .querySelector(".elements__cards")
@@ -150,17 +146,16 @@ function handleCardSubmit(evt) {
     const cardImage = document.querySelector(".elements__card-image");
     cardImage.addEventListener("click", () => {
       fullImage.classList.add("popup__opened");
-      const imageContainer = document.createElement("img");
-      imageContainer.classList.add("elements__full-image");
-      imageContainer.src = inputImage.value;
-      document.getElementById("image").appendChild(imageContainer);
-
+      const imageElement = document.querySelector(".elements__full-image");
+      imageElement.src = inputImage.value;
+      imageElement.alt = inputTitle.value;
+      const textElement = document.querySelector(".elements__image-text");
+      textElement.textContent = inputTitle.value;
       const closeImage = document.querySelector("#close-image");
       closeImage.addEventListener("click", () => {
         fullImage.classList.remove("popup__opened");
       });
     });
-
     return cardElement;
   }
   const newCards = [

@@ -15,10 +15,11 @@
   column-gap: 17px;
   row-gap: 20px;
 }
-
-.elements__figure {
+.elements__figure-container {
   display: flex;
   flex-direction: column;
+}
+.elements__figure {
   line-height: 0;
   margin: 0;
   object-fit: cover;
@@ -32,8 +33,8 @@
 
 .elements__trash {
   padding: 18px;
-  position: absolute;
   align-self: last baseline;
+  position: absolute;
   background: none;
   border: none;
   cursor: pointer;
@@ -44,6 +45,7 @@
   width: 100%;
   height: 100%;
   border-radius: 10px 10px 0 0;
+  cursor: pointer;
 }
 
 .elements__full-image {
