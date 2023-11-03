@@ -86,6 +86,21 @@
   opacity: 0.8;
 }
 
+.popup__image-large {
+  max-width: 75vw;
+  max-height: 75vh;
+  grid-area: img;
+}
+.popup__text-sub {
+  margin-top: 10px;
+  color: #fff;
+
+  font-size: 12px;
+
+  font-weight: 400;
+  grid-area: txt;
+}
+
 @media screen and (max-width: 880px) {
   .popup__container {
     grid-template-areas:

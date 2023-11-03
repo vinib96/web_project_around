@@ -1,7 +1,7 @@
 const openFormButton = document.querySelector(".profile__edit-button");
 const openAddButton = document.querySelector(".profile__add-button");
-const popup = document.querySelector(".popup__profile");
-const addCards = document.querySelector(".popup__add-cards");
+const popup = document.querySelector(".popup_profile");
+const addCards = document.querySelector(".popup_add-cards");
 const closeButton = popup.querySelector(".popup__close-button");
 const closeAdd = addCards.querySelector(".popup__close-add");
 const profileName = document.querySelector(".profile__name");
@@ -91,14 +91,14 @@ function addCard(cards) {
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("elements__like-button_click");
   });
-  const fullImage = document.querySelector(".popup__full-image");
+  const fullImage = document.querySelector(".popup_full");
   const cardImage = document.querySelector(".elements__card-image");
   cardImage.addEventListener("click", () => {
     fullImage.classList.add("popup__opened");
-    const imageElement = document.querySelector(".elements__full-image");
+    const imageElement = document.querySelector(".popup__image-large");
     imageElement.src = cards.link;
     imageElement.alt = cards.name;
-    const textElement = document.querySelector(".elements__image-text");
+    const textElement = document.querySelector(".popup__text-sub");
     textElement.textContent = cards.name;
     const closeImage = document.querySelector("#close-image");
     closeImage.addEventListener("click", () => {
@@ -142,14 +142,14 @@ function handleCardSubmit(evt) {
     likeButton.addEventListener("click", () => {
       likeButton.classList.toggle("elements__like-button_click");
     });
-    const fullImage = document.querySelector(".popup__full-image");
+    const fullImage = document.querySelector(".popup_full");
     const cardImage = document.querySelector(".elements__card-image");
     cardImage.addEventListener("click", () => {
       fullImage.classList.add("popup__opened");
-      const imageElement = document.querySelector(".elements__full-image");
+      const imageElement = document.querySelector(".popup__image-large");
       imageElement.src = inputImage.value;
       imageElement.alt = inputTitle.value;
-      const textElement = document.querySelector(".elements__image-text");
+      const textElement = document.querySelector(".popup__text-sub");
       textElement.textContent = inputTitle.value;
       const closeImage = document.querySelector("#close-image");
       closeImage.addEventListener("click", () => {

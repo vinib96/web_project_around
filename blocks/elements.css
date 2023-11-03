@@ -48,12 +48,6 @@
   cursor: pointer;
 }
 
-.elements__full-image {
-  max-width: 75vw;
-  max-height: 75vh;
-  grid-area: img;
-}
-
 .elements__content {
   display: flex;
   justify-content: space-between;
@@ -65,16 +59,6 @@
 .elements__text {
   font-size: 24px;
   font-weight: 900;
-}
-
-.elements__image-text {
-  margin-top: 10px;
-  color: #fff;
-
-  font-size: 12px;
-
-  font-weight: 400;
-  grid-area: txt;
 }
 
 .block {
