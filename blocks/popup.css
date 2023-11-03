@@ -87,9 +87,6 @@
 }
 
 @media screen and (max-width: 880px) {
-  .popup__close-button {
-    right: 0;
-  }
   .popup__container {
     grid-template-areas:
       "button"
