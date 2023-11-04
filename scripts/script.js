@@ -149,6 +149,7 @@ function handleCardSubmit(evt) {
       const imageElement = document.querySelector(".popup__image-large");
       imageElement.src = inputImage.value;
       imageElement.alt = inputTitle.value;
+
       const textElement = document.querySelector(".popup__text-sub");
       textElement.textContent = inputTitle.value;
       const closeImage = document.querySelector("#close-image");
@@ -156,6 +157,7 @@ function handleCardSubmit(evt) {
         fullImage.classList.remove("popup__opened");
       });
     });
+    addCards.classList.remove("popup__opened");
     return cardElement;
   }
   const newCards = [
@@ -168,5 +170,6 @@ function handleCardSubmit(evt) {
     const cardElement = createCard(card);
     cardsContainer.prepend(cardElement);
   });
+  document.getElementById("add-card").reset();
 }
 cardsForm.addEventListener("submit", handleCardSubmit);
