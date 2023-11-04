@@ -1,9 +1,18 @@
-# Projeto número 5: "Ao redor dos EUA"
-<p>O quinto projeto (referente a Sprint 5) do curso de "Desenvolvedor Web" da TripleTen consistiu na criação de uma página web onde os usuários podem adicionar, remover, ou curtir fotos. A responsividade foi criada com as técnicas aprendidas na Sprint anterior, como a definição de larguras em porcentagem e o midia querry (especificamente voltados para telas e cada um definindo uma altura máxima) e também foi criado um formulario "popup" utilizando pela primeira vez o JavaScript, adicionando botões para abertura e fechamento do "popup" e um botão para salvar as alterações dos inputs do formulário e devolve-los a página principal.
-<p>Foi utilizado o layout em "grid" para construção do popup (com propriedades de areas) e o flexbox para posicionar os demais itens da página.</p>
+<h1  align="center">Projeto números 5 e 6: "Ao redor dos EUA"</h1> 
+<p>O <b>quinto e sexto projeto</b> (referentes a Sprint 5 e 6) do curso de <b>"Desenvolvedor Web"</b> da TripleTen consistiu na <b>criação de uma página web onde os usuários podem adicionar, remover, ou curtir fotos</b>. A <b>responsividade</b> foi criada com as técnicas aprendidas na Sprint anterior, como a <b>definição de larguras em porcentagem</b> e o <b>midia querry</b>(especificamente voltados para telas e cada um definindo uma altura máxima). Foi utilizado pela primeira vez o <b>JavaScript</b> para criação das seguintes funcionalidades: </p>
+<li><b>Adicionar botões para fechamento e abertura dos <i>popups</i> da página;</b></li>
+<li><b>Botões para salvar as alterações dos inputs do formulário e devolve-los a página principal;</b></li>
+<li><b>Botão para excluir o cartão da página e botão para "curtir" a imagem;</b></li>
+<li><b>Adicionar os seis cartões iniciais da página, bem como criar novos cartões;</b></li>
+<li><b>Abrir um <i>popup</i> com a imagem do cartão em seu tamanho original;</b></li>
+<br>
+<p>Para o posicionamento dos demais itens da página, foram utilizados:</p>
+<li><b>Layout em "grid" com propriedades de áreas;</b></li>
+<li><b>Flexbox;</b></li>
+<br>
 <p>Vale ressaltar que todas as informações relacionadas ao design do site foram obtidas por meio da utilização do Figma e a metodologia utilizada foi "BEM".</p>
 <p> Para acessar a página basta acessar https://vinib96.github.io/web_project_around/ </p>
-<p>Futuramente será possível adicionar funcionalidades ao botões "curtir" e "adicionar".</p>
+<p>Futuramente será possível retornar as submissões dos formulários para outra página web.</p>
 
 <p>
   <img src="https://miro.medium.com/v2/resize:fit:679/1*i8-u-V8LTTbQwTeUwLI_BQ.gif" />
