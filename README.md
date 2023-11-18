@@ -1,10 +1,12 @@
-<h1  align="center">Projeto números 5 e 6: "Ao redor dos EUA"</h1> 
-<p>O <b>quinto e sexto projeto</b> (referentes a Sprint 5 e 6) do curso de <b>"Desenvolvedor Web"</b> da TripleTen consistiu na <b>criação de uma página web onde os usuários podem adicionar, remover, ou curtir fotos</b>. A <b>responsividade</b> foi criada com as técnicas aprendidas na Sprint anterior, como a <b>definição de larguras em porcentagem</b> e o <b>midia querry</b>(especificamente voltados para telas e cada um definindo uma altura máxima). Foi utilizado pela primeira vez o <b>JavaScript</b> para criação das seguintes funcionalidades: </p>
+<h1  align="center">Projeto: "Ao redor dos EUA"</h1> 
+<p>O projeto  <b>"Ao redor dos EUA"</b> (referentes as Sprints de 5 a 7) do curso de <b>"Desenvolvedor Web"</b> da TripleTen consistiu na <b>criação de uma página web onde os usuários podem adicionar, remover, ou curtir fotos</b>. A <b>responsividade</b> foi criada com as técnicas aprendidas na Sprint anterior, como a <b>definição de larguras em porcentagem</b> e o <b>midia querry</b>(especificamente voltados para telas e cada um definindo uma altura máxima). Foi utilizado pela primeira vez o <b>JavaScript</b> para criação das seguintes funcionalidades: </p>
 <li><b>Adicionar botões para fechamento e abertura dos <i>popups</i> da página;</b></li>
 <li><b>Botões para salvar as alterações dos inputs do formulário e devolve-los a página principal;</b></li>
 <li><b>Botão para excluir o cartão da página e botão para "curtir" a imagem;</b></li>
 <li><b>Adicionar os seis cartões iniciais da página, bem como criar novos cartões;</b></li>
 <li><b>Abrir um <i>popup</i> com a imagem do cartão em seu tamanho original;</b></li>
+<li><b>Fechar os <i>popups</i> clicando em qualquer área fora dos formulários ou apertando a tecla "ESC" do teclado;</b></li>
+<li><b>Validação dos formulários e customização das mensagens de erro;</b></li>
 <br>
 <p>Para o posicionamento dos demais itens da página, foram utilizados:</p>
 <li><b>Layout em "grid" com propriedades de áreas;</b></li>
