@@ -142,8 +142,5 @@ document.querySelector(".popup_full").addEventListener("click", onClick);
 document.querySelector(".popup_add-cards").addEventListener("click", onClick);
 
 function onClick(evt) {
-  document.querySelectorAll(".popup__container").forEach((item) => {
-    item.classList.remove("popup__opened");
-  });
-  evt.target.classList.toggle("popup__opened");
+  evt.target.classList.remove("popup__opened");
 }
