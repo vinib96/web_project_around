@@ -36,6 +36,18 @@ const toggleButtonState = (inputList, buttonElement) => {
   }
 };
 
+// const resetFormState = (formElement) => {
+//   const inputList = Array.from(formElement.querySelectorAll(".popup__input"));
+//   const buttonElement = formElement.querySelector(".popup__submit-button");
+
+//   inputList.forEach((inputElement) => {
+//     hideInputError(formElement, inputElement);
+//     inputElement.value = "";
+//   });
+
+//   toggleButtonState(inputList, buttonElement);
+// };
+
 const setEventListeners = (formElement) => {
   const buttonElement = formElement.querySelector(".popup__submit-button");
   const inputList = Array.from(formElement.querySelectorAll(".popup__input"));
