@@ -1,36 +1,3 @@
-const initialCards = [
-  {
-    name: "Vale de Yosemite",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg",
-  },
-  {
-    name: "Lago Louise",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg",
-  },
-  {
-    name: "Montanhas Carecas",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_bald-mountains.jpg",
-  },
-  {
-    name: "Latemar",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_latemar.jpg",
-  },
-  {
-    name: "Parque Nacional da Vanoise ",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_vanoise.jpg",
-  },
-  {
-    name: "Lago di Braies",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg",
-  },
-];
-
-const addCards = document.querySelector(".popup_add-cards");
-const cardsForm = document.querySelector("#cards-form");
-const imageElement = document.querySelector(".popup__image-large");
-const fullImage = document.querySelector(".popup_full");
-const closeImage = document.querySelector("#close-image");
-
 export default class Card {
   constructor(data, cardSelector) {
     this._link = data.link;
@@ -49,42 +16,60 @@ export default class Card {
 
   generateCard() {
     this._element = this._getTemplate();
-
+    this._setEventListeners();
     this._element.querySelector(".elements__card-image").src = this._link;
-    this._element.querySelector(".elements__card-image").alt = this._name;
+    this._element.querySelector(".elements__text").alt = this._name;
     this._element.querySelector(".elements__text").textContent = this._name;
 
     return this._element;
   }
 
   _handleOpenPopup() {
+    document.querySelector(".popup_full").classList.add("popup__opened");
+    const imageElement = document.querySelector(".popup__image-large");
     imageElement.src = this._link;
     imageElement.alt = this._name;
     const textElement = document.querySelector(".popup__text-sub");
     textElement.textContent = this._name;
-    fullImage.classList.add("popup__opened");
   }
 
   _handleClosePopup() {
-    imageElement.src = "";
-    imageElement.alt = "";
-    fullImage.classList.remove("popup__opened");
+    document.querySelector(".popup_full").classList.remove("popup__opened");
   }
 
   _setEventListeners() {
-    this._element.addEventListener("click", () => {
-      this._handleOpenPopup();
+    this._element
+      .querySelector(".elements__card-image")
+      .addEventListener("click", () => {
+        this._handleOpenPopup();
+      });
+
+    document.querySelector("#close-image").addEventListener("click", () => {
+      this._handleClosePopup();
     });
 
-    closeImage.addEventListener("click", () => {
-      this._handleClosePopup();
+    const trashButton = this._element.querySelector(".elements__trash");
+    trashButton.addEventListener("click", () => {
+      const elementRemove = trashButton.closest(".elements__cards");
+      elementRemove.remove();
+    });
+    const likeButton = this._element.querySelector(".elements__like-button");
+
+    likeButton.addEventListener("click", () => {
+      likeButton.classList.toggle("elements__like-button_click");
     });
   }
 }
 
-initialCards.forEach((item) => {
-  const card = new Card(item, ".cards");
-  const cardElement = card.generateCard();
+// function _handleClosePopup() {
+//   document.querySelector(".popup_full").classList.remove("popup__opened");
+// }
 
-  document.querySelector(".elements__container").append(cardElement);
-});
+// function _handleOpenPopup() {
+//   document.querySelector(".popup_full").classList.add("popup__opened");
+//   const imageElement = document.querySelector(".popup__image-large");
+//   imageElement.src = document.querySelector(".elements__card-image");
+//   imageElement.alt = document.querySelector(".elements__text");
+//   const textElement = document.querySelector(".popup__text-sub");
+//   textElement.textContent = document.querySelector(".elements__text");
+// }
