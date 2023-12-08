@@ -17,17 +17,13 @@ export default class FormValidator {
       `.${inputElement.id}-error`
     );
     inputElement.classList.add("text-color");
-    inputElement.classList.remove("popup__input_type_error");
+    inputElement.classList.remove(this._config.inputErrorClass);
     errorElement.classList.remove(this._config.errorClass);
     errorElement.textContent = "";
   }
   _checkInputValidity(inputElement) {
     if (!inputElement.validity.valid) {
-      this._showInputError(
-        this._formElement,
-        inputElement,
-        inputElement.validationMessage
-      );
+      this._showInputError(this._inputElement, inputElement.validationMessage);
     } else {
       this._hideInputError(this._formElement, inputElement);
     }
