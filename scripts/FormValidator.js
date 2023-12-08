@@ -45,10 +45,7 @@ export default class FormValidator {
       buttonElement.classList.remove(this._config.inactiveButtonClass);
     }
   }
-  _setEventListeners() {
-    const formList = Array.from(
-      document.querySelectorAll(this._config.formSelector)
-    );
+  _setEventListeners(formList) {
     formList.forEach((formElement) => {
       formElement.addEventListener("submit", function (evt) {
         evt.preventDefault();
@@ -65,7 +62,10 @@ export default class FormValidator {
   }
 
   enableValidation() {
-    this._setEventListeners();
+    const formList = Array.from(
+      document.querySelectorAll(this._config.formSelector)
+    );
+    this._setEventListeners(formList);
   }
 }
 const addCards = document.querySelector(".popup_add-cards");
@@ -97,12 +97,3 @@ const addValid = new FormValidator(
 
 addValid.enableValidation();
 profileValid.enableValidation();
-
-// enableValidation({
-//   formSelector: ".popup__form",
-//   inputSelector: ".popup__input",
-//   submitButtonSelector: ".popup__submit-button",
-//   inactiveButtonClass: "popup__button_disabled",
-//   inputErrorClass: "popup__input_type_error",
-//   errorClass: "popup__error_visible",
-// });
