@@ -41,6 +41,23 @@ export default class FormValidator {
       buttonElement.classList.remove(this._config.inactiveButtonClass);
     }
   }
+
+  _fieldsetEvent() {
+    const buttonElement = this._formElement.querySelector(
+      this._config.submitButtonSelector
+    );
+    const inputList = Array.from(
+      this._formElement.querySelectorAll(this._config.inputSelector)
+    );
+    this._toggleButtonState(inputList, buttonElement);
+    inputList.forEach((inputElement) => {
+      inputElement.addEventListener("input", function () {
+        this._checkInputValidity(this._formElement, inputElement);
+        this._toggleButtonState(inputList, buttonElement);
+      });
+    });
+  }
+
   _setEventListeners(formList) {
     formList.forEach((formElement) => {
       formElement.addEventListener("submit", function (evt) {
@@ -48,11 +65,11 @@ export default class FormValidator {
       });
 
       const fieldsetList = Array.from(
-        formElement.querySelectorAll(".popup__formset")
+        this._formElement.querySelectorAll(".popup__formset")
       );
 
       fieldsetList.forEach((fieldset) => {
-        setEventListeners(fieldset);
+        this._fieldsetEvent(fieldset);
       });
     });
   }
@@ -75,6 +92,7 @@ const profileValid = new FormValidator(
     inactiveButtonClass: "popup__button_disabled",
     inputErrorClass: "popup__input_type_error",
     errorClass: "popup__error_visible",
+    formClass: ".popup__formset",
   },
   popup
 );
@@ -87,6 +105,7 @@ const addValid = new FormValidator(
     inactiveButtonClass: "popup__button_disabled",
     inputErrorClass: "popup__input_type_error",
     errorClass: "popup__error_visible",
+    formClass: ".popup__formset",
   },
   addCards
 );
