@@ -23,13 +23,9 @@ export default class FormValidator {
   }
   _checkInputValidity(inputElement) {
     if (!inputElement.validity.valid) {
-      this._showInputError(
-        this._formElement,
-        inputElement,
-        inputElement.validationMessage
-      );
+      this._showInputError(inputElement, inputElement.validationMessage);
     } else {
-      this._hideInputError(this._formElement, inputElement);
+      this._hideInputError(inputElement);
     }
   }
   _hasInvalidInput(inputList) {
@@ -45,6 +41,7 @@ export default class FormValidator {
       buttonElement.classList.remove(this._config.inactiveButtonClass);
     }
   }
+
   _setEventListeners() {
     const buttonElement = this._formElement.querySelector(
       this._config.submitButtonSelector
@@ -55,40 +52,11 @@ export default class FormValidator {
     this._toggleButtonState(inputList, buttonElement);
     inputList.forEach((inputElement) => {
       inputElement.addEventListener("input", () => {
-        this._checkInputValidity(this._formElement, inputElement);
+        this._checkInputValidity(inputElement);
         this._toggleButtonState(inputList, buttonElement);
       });
     });
   }
-  // _fieldsetEvent() {
-  //   const buttonElement = this._formElement.querySelector(
-  //     this._config.submitButtonSelector
-  //   );
-  //   const inputList = Array.from(
-  //     this._formElement.querySelectorAll(this._config.inputSelector)
-  //   );
-  //   this._toggleButtonState(inputList, buttonElement);
-  //   inputList.forEach((inputElement) => {
-  //     inputElement.addEventListener("input", () => {
-  //       this._checkInputValidity(this._formElement, inputElement);
-  //       this._toggleButtonState(inputList, buttonElement);
-  //     });
-  //   });
-  // }
-
-  // _setEventListeners(formList) {
-  //   formList.forEach((formElement) => {
-  //     formElement.addEventListener("submit", (evt) => {
-  //       evt.preventDefault();
-  //     });
-  //     const fieldsetList = Array.from(
-  //       this._formElement.querySelectorAll(".popup__formset")
-  //     );
-  //     fieldsetList.forEach((fieldset) => {
-  //       this._fieldsetEvent(fieldset);
-  //     });
-  //   });
-  // }
 
   enableValidation() {
     const formList = Array.from(
@@ -107,10 +75,6 @@ export default class FormValidator {
         this._setEventListeners(fieldset);
       });
     });
-    // const formList = Array.from(
-    //   document.querySelectorAll(this._config.formSelector)
-    // );
-    // this._setEventListeners(formList);
   }
 }
 const addCards = document.querySelector(".popup_add-cards");
