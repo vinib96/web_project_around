@@ -15,7 +15,7 @@
 
 .popup__container {
   max-width: 470px;
-  margin: 10% auto;
+  margin: 5% auto;
   display: grid;
   grid-template-areas:
     ". button"

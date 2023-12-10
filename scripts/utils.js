@@ -10,6 +10,9 @@ const inputName = document.querySelector(".popup__input_type_name");
 const inputAbout = document.querySelector(".popup__input_type_about");
 const form = document.querySelector(".popup__form_profile");
 const fullImage = document.querySelector(".popup_full");
+document.querySelector(".popup_profile").addEventListener("click", onClick);
+document.querySelector(".popup_full").addEventListener("click", onClick);
+document.querySelector(".popup_add-cards").addEventListener("click", onClick);
 
 openFormButton.addEventListener("click", () => {
   popup.classList.add("popup__opened");
@@ -43,10 +46,6 @@ document.addEventListener("keydown", function (evt) {
     addCards.classList.remove("popup__opened");
   }
 });
-
-document.querySelector(".popup_profile").addEventListener("click", onClick);
-document.querySelector(".popup_full").addEventListener("click", onClick);
-document.querySelector(".popup_add-cards").addEventListener("click", onClick);
 
 function onClick(evt) {
   evt.target.classList.remove("popup__opened");

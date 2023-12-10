@@ -67,16 +67,3 @@ export default class Card {
     });
   }
 }
-
-// function _handleClosePopup() {
-//   document.querySelector(".popup_full").classList.remove("popup__opened");
-// }
-
-// function _handleOpenPopup() {
-//   document.querySelector(".popup_full").classList.add("popup__opened");
-//   const imageElement = document.querySelector(".popup__image-large");
-//   imageElement.src = document.querySelector(".elements__card-image");
-//   imageElement.alt = document.querySelector(".elements__text");
-//   const textElement = document.querySelector(".popup__text-sub");
-//   textElement.textContent = document.querySelector(".elements__text");
-// }
