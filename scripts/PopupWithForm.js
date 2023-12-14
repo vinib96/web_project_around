@@ -14,7 +14,8 @@ export default class PopupWithForm extends Popup {
 
     // Adicione os valores dos campos a esse objeto
     this._inputList.forEach((input) => {
-      this._formValues[input.name] = input.value;
+      this._formValues[input.title] = input.value;
+      this._formValues[input.link] = input.value;
     });
 
     // Retorne o objeto de valores

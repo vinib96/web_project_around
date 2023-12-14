@@ -27,16 +27,16 @@ export default class Card {
   }
 
   _handleOpenPopup() {
-    document.querySelector(".popup_full").classList.add("popup__opened");
-    const imageElement = document.querySelector(".popup__image-large");
-    imageElement.src = this._link;
-    imageElement.alt = this._name;
-    const textElement = document.querySelector(".popup__text-sub");
-    textElement.textContent = this._name;
+    // document.querySelector(".popup_full").classList.add("popup__opened");
+    // const imageElement = document.querySelector(".popup__image-large");
+    // imageElement.src = this._link;
+    // imageElement.alt = this._name;
+    // const textElement = document.querySelector(".popup__text-sub");
+    // textElement.textContent = this._name;
   }
 
   _handleClosePopup() {
-    document.querySelector(".popup_full").classList.remove("popup__opened");
+    // document.querySelector(".popup_full").classList.remove("popup__opened");
   }
 
   _like() {
