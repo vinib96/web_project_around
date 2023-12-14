@@ -20,7 +20,7 @@ import {
   add,
   popupListSelector,
   proInp,
-} from "./scripts/constants.js";
+} from "./scripts/utils.js";
 
 const initialCards = [
   {
