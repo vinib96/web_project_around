@@ -14,15 +14,17 @@ export default class PopupWithForm extends Popup {
 
     // Adicione os valores dos campos a esse objeto
     this._inputList.forEach((input) => {
-      this._formValues[input.title] = input.value;
-      this._formValues[input.link] = input.value;
+      this._formValues[input.name] = input.value;
     });
 
     // Retorne o objeto de valores
     return this._formValues;
   }
-  _setEventListeners() {
-    this._element.addEventListener("submit", (evt) => {
+  setEventListeners() {
+    super.setEventListeners();
+    const subBut = document.querySelector(".popup__submit-button");
+
+    subBut.addEventListener("submit", (evt) => {
       evt.preventDefault();
 
       // Adicione uma chamada de função _handleFormSubmit()

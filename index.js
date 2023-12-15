@@ -16,62 +16,13 @@ import {
   cardsForm,
   openAddButton,
   openFormButton,
+  fullImage,
   form,
   add,
   popupListSelector,
   proInp,
+  initialCards,
 } from "./scripts/constants.js";
-
-const initialCards = [
-  {
-    name: "Vale de Yosemite",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg",
-  },
-  {
-    name: "Lago Louise",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg",
-  },
-  {
-    name: "Montanhas Carecas",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_bald-mountains.jpg",
-  },
-  {
-    name: "Latemar",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_latemar.jpg",
-  },
-  {
-    name: "Parque Nacional da Vanoise ",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_vanoise.jpg",
-  },
-  {
-    name: "Lago di Braies",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg",
-  },
-];
-
-// initialCards.forEach((item) => {
-//   const card = new Card(item, "#cards");
-//   const cardElement = card.generateCard();
-
-//   document.querySelector(".elements__container").append(cardElement);
-// });
-
-// cardsForm.addEventListener("submit", (evt) => {
-//   evt.preventDefault();
-//   const inputTitle = document.querySelector(".popup__input_type_title");
-//   const inputImage = document.querySelector(".popup__input_type_image");
-
-//   const cardData = {
-//     name: inputTitle.value,
-//     link: inputImage.value,
-//   };
-//   const cardNew = new Card(cardData);
-//   const cardElement = cardNew.generateCard();
-//   document.querySelector(".elements__container").prepend(cardElement);
-//   addCards.classList.remove("popup__opened");
-
-//   document.getElementById("add-card").reset();
-// });
 
 const defaultCardList = new Section(
   {
@@ -84,55 +35,44 @@ const defaultCardList = new Section(
   },
   cardListSelector
 );
+defaultCardList.renderItems();
 
-// const formProf = new PopupWithForm(".popup_profile", () => {
-//   profileName.textContent = inputName.value;
-//   profileAbout.textContent = inputAbout.value;
-//   formProf._setEventListeners();
-// });
+openFormButton.addEventListener("click", () => {
+  const openPop = new Popup(popup);
+  openPop.open();
+  openPop.setEventListeners();
+});
 
-// const formAdd = new PopupWithForm();
+openAddButton.addEventListener("click", () => {
+  const openAdd = new Popup(addCards);
+  openAdd.open();
+  openAdd.setEventListeners();
+});
+
 const formProf = new PopupWithForm({
   popupSelector: ".popup",
-  handleFormSubmit: () => {
+  handleFormSubmit: (formData) => {
     // passamos o objeto formData contendo dados do formulário
     // para uma nova instância da classe UserCard
-    const newUser = new UserInfo(inputName, inputAbout);
+    const newUser = new UserInfo(formData);
 
     const userElement = newUser.getUserInfo();
 
-    proInp.setUserInfo(userElement);
+    form.setUserInfo(userElement);
   },
 });
-formProf.setEventListeners();
 
 const formAdd = new PopupWithForm({
   popupSelector: ".popup_add-cards",
-  handleFormSubmit: (item) => {
+  handleFormSubmit: (formData) => {
     // passamos o objeto formData contendo dados do formulário
     // para uma nova instância da classe UserCard
-    const newCard = new Card(item, "#cards");
+    const newCard = new Card(formData, "#cards");
 
     const cardElement = newCard.generateCard();
 
     defaultCardList.setItem(cardElement);
   },
 });
-formAdd.setEventListeners();
 
-openFormButton.addEventListener("click", () => {
-  const openPop = new Popup(popup);
-  openPop.open();
-});
-
-openAddButton.addEventListener("click", () => {
-  const openAdd = new Popup(addCards);
-  openAdd.open();
-});
-function imageFull(link) {
-  document.querySelector(".popup_full").classList.add("popup__opened");
-  const imageElement = document.querySelector(".popup__image-large");
-  imageElement.src = link;
-}
-
-defaultCardList.renderItems();
+const popFull = new Popup();

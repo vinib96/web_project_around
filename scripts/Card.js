@@ -26,18 +26,14 @@ export default class Card {
     return this._element;
   }
 
-  _handleOpenPopup() {
-    // document.querySelector(".popup_full").classList.add("popup__opened");
-    // const imageElement = document.querySelector(".popup__image-large");
-    // imageElement.src = this._link;
-    // imageElement.alt = this._name;
-    // const textElement = document.querySelector(".popup__text-sub");
-    // textElement.textContent = this._name;
-  }
-
-  _handleClosePopup() {
-    // document.querySelector(".popup_full").classList.remove("popup__opened");
-  }
+  // handleCardClick() {
+  //   document.querySelector(".popup_full").classList.add("popup__opened");
+  //   // const imageElement = document.querySelector(".popup__image-large");
+  //   // imageElement.src = this._link;
+  //   // imageElement.alt = this._name;
+  //   // const textElement = document.querySelector(".popup__text-sub");
+  //   // textElement.textContent = this._name;
+  // }
 
   _like() {
     const likeButton = this._element.querySelector(".elements__like-button");
@@ -56,11 +52,11 @@ export default class Card {
   }
 
   _setEventListeners() {
-    this._element
-      .querySelector(".elements__card-image")
-      .addEventListener("click", () => {
-        this._handleOpenPopup();
-      });
+    // this._element
+    //   .querySelector(".elements__card-image")
+    //   .addEventListener("click", () => {
+    //     this.handleCardClick();
+    //   });
 
     document.querySelector("#close-image").addEventListener("click", () => {
       this._handleClosePopup();

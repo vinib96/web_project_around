@@ -1,7 +1,7 @@
 export default class UserInfo {
-  constructor({ nameInfo, aboutInfo }) {
-    this._name = nameInfo;
-    this._about = aboutInfo;
+  constructor({ formData }) {
+    this._name = formData.name;
+    this._about = formData.about;
   }
 
   getUserInfo(name, about) {
