@@ -15,6 +15,7 @@ export const popupListSelector = document.querySelector(".popup__container");
 export const cardsForm = document.querySelector("#cards-form");
 export const add = document.querySelector("#add-card");
 export const proInp = document.querySelector(".profile__input");
+export const imgClick = document.querySelector(".elements__card-image");
 export const initialCards = [
   {
     name: "Vale de Yosemite",

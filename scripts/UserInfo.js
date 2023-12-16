@@ -1,15 +1,20 @@
+const profileName = document.querySelector(".profile__name");
+const profileAbout = document.querySelector(".profile__about");
+const inputName = document.querySelector(".popup__input_type_name");
+const inputAbout = document.querySelector(".popup__input_type_about");
+
 export default class UserInfo {
-  constructor({ formData }) {
-    this._name = formData.name;
-    this._about = formData.about;
+  constructor({ name, about }) {
+    this._name = name;
+    this._about = about;
   }
 
-  getUserInfo(name, about) {
-    name = this._name.textContent;
-    about = this._about.textContent;
+  getUserInfo() {
+    inputName = this._name;
+    inputAbout = this._about;
   }
-  setUserInfo(name, about) {
-    this._name.textContent = name;
-    this._about.textContent = about;
+  setUserInfo() {
+    profileName.textContent = this._name;
+    profileAbout.textContent = this._about;
   }
 }

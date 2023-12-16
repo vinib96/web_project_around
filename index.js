@@ -22,13 +22,19 @@ import {
   popupListSelector,
   proInp,
   initialCards,
+  imgClick,
 } from "./scripts/constants.js";
 
 const defaultCardList = new Section(
   {
     items: initialCards,
     renderer: (item) => {
-      const card = new Card(item, "#cards");
+      const card = new Card(item, "#cards", () => {
+        imgClick.addEventListener("click", (evt) => {
+          evt.preventDefault;
+          fullImage.classList.add("popup__opened");
+        });
+      });
       const cardElement = card.generateCard();
       defaultCardList.addItem(cardElement);
     },
@@ -51,22 +57,17 @@ openAddButton.addEventListener("click", () => {
 
 const formProf = new PopupWithForm({
   popupSelector: ".popup",
-  handleFormSubmit: (formData) => {
-    // passamos o objeto formData contendo dados do formulário
-    // para uma nova instância da classe UserCard
-    const newUser = new UserInfo(formData);
+  handleFormSubmit: (name, about) => {
+    const newUser = new UserInfo(name, about);
 
     const userElement = newUser.getUserInfo();
 
     form.setUserInfo(userElement);
   },
 });
-
 const formAdd = new PopupWithForm({
   popupSelector: ".popup_add-cards",
   handleFormSubmit: (formData) => {
-    // passamos o objeto formData contendo dados do formulário
-    // para uma nova instância da classe UserCard
     const newCard = new Card(formData, "#cards");
 
     const cardElement = newCard.generateCard();
@@ -75,4 +76,11 @@ const formAdd = new PopupWithForm({
   },
 });
 
-const popFull = new Popup();
+// const formElement = formAdd;
+// const formRenderer = new Section(
+//   {
+//     items: [], // podemos passar um argumento com um vetor vazio
+//   },
+//   "#add-card"
+// );
+// formRenderer.addItem(formElement);
