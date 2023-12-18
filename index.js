@@ -58,8 +58,12 @@ openFormButton.addEventListener("click", () => {
 
 const formAdd = new PopupWithForm({
   popupSelector: addCards,
-  handleFormSubmit: (formData) => {
-    const cardNew = new Card(formData, "#cards", ({ name, link }) => {
+  handleFormSubmit: () => {
+    const cardData = {
+      name: document.querySelector(".popup__input_type_title").value,
+      link: document.querySelector(".popup__input_type_image").value,
+    };
+    const cardNew = new Card(cardData, "#cards", ({ name, link }) => {
       fullImage.open(name, link);
     });
     const cardElement = cardNew.generateCard();

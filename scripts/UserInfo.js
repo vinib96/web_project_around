@@ -5,8 +5,10 @@ export default class UserInfo {
   }
 
   getUserInfo() {
-    this._name = document.querySelector(".popup__input_type_name");
-    this._name = document.querySelector(".popup__input_type_about");
+    return {
+      name: document.querySelector(".profile__name"),
+      about: document.querySelector(".profile__about"),
+    };
   }
   setUserInfo() {
     document.querySelector(".profile__name").textContent = this._name;
