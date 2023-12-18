@@ -18,10 +18,9 @@ export default class Popup {
   };
 
   setEventListeners() {
-    const buttonClose = this._popupSelector.querySelector(
-      ".popup__close-button"
-    );
-    buttonClose.addEventListener("click", this.close);
+    this._popupSelector
+      .querySelector(".popup__close-button")
+      .addEventListener("click", this.close);
     function onClick(evt) {
       evt.target.classList.remove("popup__opened");
     }

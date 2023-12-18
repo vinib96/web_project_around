@@ -1,8 +1,3 @@
-const profileName = document.querySelector(".profile__name");
-const profileAbout = document.querySelector(".profile__about");
-const inputName = document.querySelector(".popup__input_type_name");
-const inputAbout = document.querySelector(".popup__input_type_about");
-
 export default class UserInfo {
   constructor({ name, about }) {
     this._name = name;
@@ -10,11 +5,11 @@ export default class UserInfo {
   }
 
   getUserInfo() {
-    inputName = this._name;
-    inputAbout = this._about;
+    this._name = document.querySelector(".popup__input_type_name");
+    this._name = document.querySelector(".popup__input_type_about");
   }
   setUserInfo() {
-    profileName.textContent = this._name;
-    profileAbout.textContent = this._about;
+    document.querySelector(".profile__name").textContent = this._name;
+    document.querySelector(".profile__about").textContent = this._about;
   }
 }

@@ -25,15 +25,15 @@ import {
   imgClick,
 } from "./scripts/constants.js";
 
+const popImage = new PopupWithImage(fullImage);
+popImage.setEventListeners();
+
 const defaultCardList = new Section(
   {
     items: initialCards,
     renderer: (item) => {
-      const card = new Card(item, "#cards", () => {
-        imgClick.addEventListener("click", (evt) => {
-          evt.preventDefault;
-          fullImage.classList.add("popup__opened");
-        });
+      const card = new Card(item, "#cards", ({ name, link }) => {
+        fullImage.open(name, link);
       });
       const cardElement = card.generateCard();
       defaultCardList.addItem(cardElement);
@@ -43,44 +43,31 @@ const defaultCardList = new Section(
 );
 defaultCardList.renderItems();
 
-openFormButton.addEventListener("click", () => {
-  const openPop = new Popup(popup);
-  openPop.open();
-  openPop.setEventListeners();
-});
-
-openAddButton.addEventListener("click", () => {
-  const openAdd = new Popup(addCards);
-  openAdd.open();
-  openAdd.setEventListeners();
-});
-
 const formProf = new PopupWithForm({
-  popupSelector: ".popup",
-  handleFormSubmit: (name, about) => {
-    const newUser = new UserInfo(name, about);
-
-    const userElement = newUser.getUserInfo();
-
-    form.setUserInfo(userElement);
-  },
-});
-const formAdd = new PopupWithForm({
-  popupSelector: ".popup_add-cards",
+  popupSelector: popup,
   handleFormSubmit: (formData) => {
-    const newCard = new Card(formData, "#cards");
+    const newUser = new UserInfo(formData);
 
-    const cardElement = newCard.generateCard();
-
-    defaultCardList.setItem(cardElement);
+    newUser.setUserInfo();
   },
 });
+formProf.setEventListeners();
+openFormButton.addEventListener("click", () => {
+  formProf.open();
+});
 
-// const formElement = formAdd;
-// const formRenderer = new Section(
-//   {
-//     items: [], // podemos passar um argumento com um vetor vazio
-//   },
-//   "#add-card"
-// );
-// formRenderer.addItem(formElement);
+const formAdd = new PopupWithForm({
+  popupSelector: addCards,
+  handleFormSubmit: (formData) => {
+    const cardNew = new Card(formData, "#cards", ({ name, link }) => {
+      fullImage.open(name, link);
+    });
+    const cardElement = cardNew.generateCard();
+    document.querySelector(".elements__container").prepend(cardElement);
+    addCards.classList.remove("popup__opened");
+  },
+});
+formAdd.setEventListeners();
+openAddButton.addEventListener("click", () => {
+  formAdd.open();
+});
