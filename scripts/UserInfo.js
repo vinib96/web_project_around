@@ -6,8 +6,8 @@ export default class UserInfo {
 
   getUserInfo() {
     return {
-      name: document.querySelector(".profile__name"),
-      about: document.querySelector(".profile__about"),
+      name: this._name.textContent,
+      about: this._about.textContent,
     };
   }
   setUserInfo() {

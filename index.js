@@ -6,23 +6,17 @@ import Section from "./scripts/Section.js";
 import UserInfo from "./scripts/UserInfo.js";
 import PopupWithForm from "./scripts/PopupWithForm.js";
 import {
-  profileName,
-  profileAbout,
-  inputName,
-  inputAbout,
   popup,
   addCards,
   cardListSelector,
-  cardsForm,
   openAddButton,
   openFormButton,
   fullImage,
-  form,
-  add,
-  popupListSelector,
-  proInp,
   initialCards,
-  imgClick,
+  profileName,
+  profileAbout,
+  inputAbout,
+  inputName,
 } from "./scripts/constants.js";
 
 const popImage = new PopupWithImage(fullImage);
@@ -32,8 +26,8 @@ const defaultCardList = new Section(
   {
     items: initialCards,
     renderer: (item) => {
-      const card = new Card(item, "#cards", ({ name, link }) => {
-        fullImage.open(name, link);
+      const card = new Card(item, "#cards", ({ link, name }) => {
+        popImage.open(link, name);
       });
       const cardElement = card.generateCard();
       defaultCardList.addItem(cardElement);
@@ -47,7 +41,6 @@ const formProf = new PopupWithForm({
   popupSelector: popup,
   handleFormSubmit: (formData) => {
     const newUser = new UserInfo(formData);
-
     newUser.setUserInfo();
   },
 });
@@ -63,8 +56,8 @@ const formAdd = new PopupWithForm({
       name: document.querySelector(".popup__input_type_title").value,
       link: document.querySelector(".popup__input_type_image").value,
     };
-    const cardNew = new Card(cardData, "#cards", ({ name, link }) => {
-      fullImage.open(name, link);
+    const cardNew = new Card(cardData, "#cards", ({ link, name }) => {
+      popImage.open(link, name);
     });
     const cardElement = cardNew.generateCard();
     document.querySelector(".elements__container").prepend(cardElement);
