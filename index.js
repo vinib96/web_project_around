@@ -13,8 +13,6 @@ import {
   openFormButton,
   fullImage,
   initialCards,
-  profileName,
-  profileAbout,
   inputAbout,
   inputName,
 } from "./scripts/constants.js";
@@ -37,19 +35,25 @@ const defaultCardList = new Section(
 );
 defaultCardList.renderItems();
 
-const formProf = new PopupWithForm({
+const userInfo = new UserInfo({
+  nameSelector: ".profile__name",
+  aboutSelector: ".profile__about",
+});
+const formProfile = new PopupWithForm({
   popupSelector: popup,
-  handleFormSubmit: (formData) => {
-    const newUser = new UserInfo(formData);
-    newUser.setUserInfo();
+  handleFormSubmit: ({ name, about }) => {
+    userInfo.setUserInfo(name, about);
   },
 });
-formProf.setEventListeners();
+formProfile.setEventListeners();
 openFormButton.addEventListener("click", () => {
-  formProf.open();
+  const { name, about } = userInfo.getUserInfo();
+  inputName.value = name;
+  inputAbout.value = about;
+  formProfile.open();
 });
 
-const formAdd = new PopupWithForm({
+const formAddCard = new PopupWithForm({
   popupSelector: addCards,
   handleFormSubmit: () => {
     const cardData = {
@@ -61,10 +65,9 @@ const formAdd = new PopupWithForm({
     });
     const cardElement = cardNew.generateCard();
     document.querySelector(".elements__container").prepend(cardElement);
-    addCards.classList.remove("popup__opened");
   },
 });
-formAdd.setEventListeners();
+formAddCard.setEventListeners();
 openAddButton.addEventListener("click", () => {
-  formAdd.open();
+  formAddCard.open();
 });
