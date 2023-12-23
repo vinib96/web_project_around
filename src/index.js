@@ -1,11 +1,11 @@
-import "../styles/index.css";
-import Card from "../scripts/Card.js";
-import FormValidator from "../scripts/FormValidator.js";
-import PopupWithImage from "../scripts/PopupWithImage.js";
-import Popup from "../scripts/Popup.js";
-import Section from "../scripts/Section.js";
-import UserInfo from "../scripts/UserInfo.js";
-import PopupWithForm from "../scripts/PopupWithForm.js";
+import "./styles/index.css";
+import Card from "../src/scripts/Card.js";
+import FormValidator from "../src/scripts/FormValidator.js";
+import PopupWithImage from "../src/scripts/PopupWithImage.js";
+import Popup from "../src/scripts/Popup.js";
+import Section from "../src/scripts/Section.js";
+import UserInfo from "../src/scripts/UserInfo.js";
+import PopupWithForm from "../src/scripts/PopupWithForm.js";
 import {
   popup,
   addCards,
@@ -16,7 +16,7 @@ import {
   initialCards,
   inputAbout,
   inputName,
-} from "../scripts/constants.js";
+} from "../src/scripts/constants.js";
 
 const popupWithImage = new PopupWithImage(fullImage);
 popupWithImage.setEventListeners();

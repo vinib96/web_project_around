@@ -3,36 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./index.css" />
     <title>Around</title>
   </head>
   <body>
     <div class="page">
       <header class="header">
         <div class="logo">
-          <img
-            src="./images/logo.png"
-            alt="Logo da Around"
-            class="logo__header-image"
-          />
+          <img src= <%= require('./styles/images/logo.png')%> alt="Logo da
+          Around" class="logo__header-image" />
         </div>
         <div class="header__line"></div>
       </header>
       <section class="profile">
         <div class="profile__container">
-          <img
-            src="./images/profile-pic.png"
-            alt="Imagem de perfil do usuário"
-            class="profile__picture"
-          />
+          <img src= <%= require('./styles/images/profile-pic.png')%> alt="Imagem
+          de perfil do usuário" class="profile__picture" />
           <div class="profile__input">
             <div class="profile__text-button">
               <h1 class="profile__name block">Jacques Cousteau</h1>
               <button type="button" class="profile__edit-button">
-                <img
-                  src="./images/Edit-Button.png"
-                  alt="Botão de editar perfil"
-                />
+                <img src=<%= require('./styles/images/edit__button.png')%> "alt"
+                ="Botão de editar perfil" />
               </button>
             </div>
 
@@ -40,10 +31,8 @@
           </div>
         </div>
         <button type="button" class="profile__add-button">
-          <img
-            class="profile__add-image"
-            src="./images/Add__button.png"
-            alt="Botão de adicionar"
+          <img class="profile__add-image" src=<%=
+          require('./styles/images/Add__button.png')%> alt="Botão de adicionar"
           />
         </button>
       </section>
@@ -52,7 +41,8 @@
           <li class="elements__cards">
             <div class="elements__figure-container">
               <button type="button" id="trash" class="elements__trash">
-                <img src="./images/Trash.png" alt="Lixo" />
+                <img src=<%= require('./styles/images/Trash.png')%> alt="Lixo"
+                />
               </button>
               <figure class="elements__figure">
                 <img src=" " alt=" " class="elements__card-image" />
@@ -73,7 +63,8 @@
       <section class="popup popup_profile" id="pop">
         <div class="popup__container">
           <button type="button" class="popup__close-button">
-            <img src="./images/Close__Icon.png" alt="Botão de fechar" />
+            <img src=<%= require('./styles/images/Close__Icon.png')%> alt="Botão
+            de fechar" />
           </button>
           <div class="popup__form-container">
             <h3 class="popup__title">Editar perfil</h3>
@@ -127,7 +118,8 @@
       <section class="popup popup_add-cards">
         <div class="popup__container" id="cards-form">
           <button type="button" class="popup__close-button popup__close-add">
-            <img src="./images/Close__Icon.png" alt="Botão de fechar" />
+            <img src=<%= require('./styles/images/Close__Icon.png')%> alt="Botão
+            de fechar" />
           </button>
           <div class="popup__form-container">
             <h3 class="popup__title">Novo local</h3>
@@ -175,7 +167,8 @@
       <section class="popup popup_full">
         <div class="popup__container popup__container_image" id="image">
           <button type="button" class="popup__close-button" id="close-image">
-            <img src="./images/Close__Icon.png" alt="Botão de fechar" />
+            <img src=<%= require('./styles/images/Close__Icon.png')%> alt="Botão
+            de fechar" />
           </button>
           <img src=" " alt=" " class="popup__image-large" />
           <p class="popup__text-sub"></p>
@@ -185,6 +178,5 @@
     </div>
 
     <script type="module" src="./src/index.js"></script>
-    <script type="module" src="./scripts/utils.js"></script>
   </body>
 </html>
