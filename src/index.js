@@ -6,6 +6,7 @@ import Popup from "../src/scripts/Popup.js";
 import Section from "../src/scripts/Section.js";
 import UserInfo from "../src/scripts/UserInfo.js";
 import PopupWithForm from "../src/scripts/PopupWithForm.js";
+import Api from "./scripts/API.js";
 import {
   popup,
   addCards,
@@ -18,28 +19,44 @@ import {
   inputName,
 } from "../src/scripts/constants.js";
 
+const api = new Api({
+  baseUrl: "https://around.nomoreparties.co/v1//web_ptbr_08",
+  headers: {
+    authorization: "728f9375-e1ce-42d8-ae33-9e03a1e5fb11",
+    "Content-Type": "application/json",
+  },
+});
+
+api
+  .getInitialCards()
+  .then((result) => {
+    const defaultCardList = new Section(
+      {
+        items: result,
+        renderer: (item) => {
+          const card = new Card(item, "#cards", () => {
+            popupWithImage.open(item.link, item.name);
+          });
+          const cardElement = card.generateCard();
+          defaultCardList.addItem(cardElement);
+        },
+      },
+      cardListSelector
+    );
+    defaultCardList.renderItems();
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
 const popupWithImage = new PopupWithImage(fullImage);
 popupWithImage.setEventListeners();
-
-const defaultCardList = new Section(
-  {
-    items: initialCards,
-    renderer: (item) => {
-      const card = new Card(item, "#cards", () => {
-        popupWithImage.open(item.link, item.name);
-      });
-      const cardElement = card.generateCard();
-      defaultCardList.addItem(cardElement);
-    },
-  },
-  cardListSelector
-);
-defaultCardList.renderItems();
 
 const userInfo = new UserInfo({
   nameSelector: ".profile__name",
   aboutSelector: ".profile__about",
 });
+
 const formProfile = new PopupWithForm({
   popupSelector: popup,
   handleFormSubmit: ({ name, about }) => {

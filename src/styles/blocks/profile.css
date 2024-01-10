@@ -7,11 +7,23 @@
   justify-content: space-between;
 }
 
+.profile__pic-button {
+  padding: 0;
+  background: url(../images/img__edit.png) center no-repeat;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+}
+
 .profile__picture {
   border-radius: 50%;
   display: flex;
   align-self: center;
   width: 170px;
+}
+
+.profile__picture:hover {
+  opacity: 0.2;
 }
 
 .profile__container {

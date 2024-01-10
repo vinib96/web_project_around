@@ -58,6 +58,9 @@
   font-size: 24px;
   font-weight: 900;
 }
+.popup__title_erase {
+  margin: 10px;
+}
 
 .popup__input {
   width: 100%;

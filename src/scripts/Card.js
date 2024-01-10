@@ -38,8 +38,8 @@ export default class Card {
   _remove() {
     const trashButton = this._element.querySelector(".elements__trash");
     trashButton.addEventListener("click", () => {
-      const elementRemove = trashButton.closest(".elements__cards");
-      elementRemove.remove();
+      const popupRemove = document.querySelector(".popup_erase");
+      popupRemove.classList.add("popup__opened");
     });
   }
 

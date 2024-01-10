@@ -79,6 +79,9 @@
   background-size: 100%;
   transition: 0.3s;
 }
+.elements__like {
+  margin: 22px 7px 0 0;
+}
 
 .elements__like-button_click {
   display: inline-block;
@@ -92,6 +95,11 @@
   background: url(../images/like__button__hover.png) center no-repeat;
 }
 
+.elements__like-counter {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
 @media screen and (max-width: 880px) {
   .elements {
     width: 100%;

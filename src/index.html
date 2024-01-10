@@ -16,8 +16,11 @@
       </header>
       <section class="profile">
         <div class="profile__container">
-          <img src= <%= require('./styles/images/profile-pic.png')%> alt="Imagem
-          de perfil do usuário" class="profile__picture" />
+          <button class="profile__pic-button">
+            <img src= <%= require('./styles/images/profile-pic.png')%>
+            alt="Imagem de perfil do usuário" class="profile__picture" />
+          </button>
+
           <div class="profile__input">
             <div class="profile__text-button">
               <h1 class="profile__name block">Jacques Cousteau</h1>
@@ -50,11 +53,14 @@
             </div>
             <div class="elements__content">
               <p class="elements__text block"></p>
-              <button
-                type="button"
-                class="elements__like-button"
-                id="like"
-              ></button>
+              <div class="elements__like">
+                <button
+                  type="button"
+                  class="elements__like-button"
+                  id="like"
+                ></button>
+                <p class="elements__like-counter">0</p>
+              </div>
             </div>
           </li>
         </template>
@@ -174,6 +180,63 @@
           <p class="popup__text-sub"></p>
         </div>
       </section>
+      <section class="popup popup_erase">
+        <div class="popup__container" id="cards-form">
+          <button type="button" class="popup__close-button popup__close-add">
+            <img src=<%= require('./styles/images/Close__Icon.png')%> alt="Botão
+            de fechar" />
+          </button>
+          <div class="popup__form-container">
+            <h3 class="popup__title popup__title_erase">Tem certeza?</h3>
+            <form class="popup__form" name="remove" id="remove" novalidate>
+              <fieldset class="popup__formset">
+                <button
+                  type="submit"
+                  class="popup__submit-button popup__button"
+                >
+                  Sim
+                </button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section class="popup popup_changepic">
+        <div class="popup__container" id="cards-form">
+          <button type="button" class="popup__close-button popup__close-add">
+            <img src=<%= require('./styles/images/Close__Icon.png')%> alt="Botão
+            de fechar" />
+          </button>
+          <div class="popup__form-container">
+            <h3 class="popup__title popup__title_erase">
+              Alterar a foto de perfil
+            </h3>
+            <form class="popup__form" name="remove" id="remove" novalidate>
+              <fieldset class="popup__formset">
+                <label>
+                  <input
+                    type="url"
+                    name="image"
+                    id="image-input"
+                    class="popup__input popup__input_type_image"
+                    placeholder="Link de imagem"
+                    required
+                  />
+
+                  <span class="image-input-error"></span>
+                </label>
+                <button
+                  type="submit"
+                  class="popup__submit-button popup__button"
+                >
+                  Salvar
+                </button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </section>
+
       <footer class="footer">&#169; 2023. Vinícíus Bueno</footer>
     </div>
   </body>
