@@ -43,7 +43,11 @@
         <template id="cards">
           <li class="elements__cards">
             <div class="elements__figure-container">
-              <button type="button" id="trash" class="elements__trash">
+              <button
+                type="button"
+                id="trash"
+                class="elements__trash "
+              >
                 <img src=<%= require('./styles/images/Trash.png')%> alt="Lixo"
                 />
               </button>
@@ -192,7 +196,7 @@
               <fieldset class="popup__formset">
                 <button
                   type="submit"
-                  class="popup__submit-button popup__button"
+                  class="popup__submit-button popup__button popup__erase-button"
                 >
                   Sim
                 </button>

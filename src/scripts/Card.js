@@ -2,6 +2,8 @@ export default class Card {
   constructor(data, cardSelector, handleCardClick) {
     this._link = data.link;
     this._name = data.name;
+    this._id = data._id;
+    this._myId = data._myId;
     this._cardSelector = cardSelector;
     this._handleClick = handleCardClick;
   }
@@ -15,9 +17,18 @@ export default class Card {
     return cardElement;
   }
 
+  _showTrashIcon() {
+    if (this._id === this._myId) {
+      this._element
+        .querySelector(".elements__trash")
+        .classList.add("elements__trash_hidden");
+    }
+  }
+
   generateCard() {
     this._element = this._getTemplate();
     this._setEventListeners();
+    this._showTrashIcon;
     this._like();
     this._remove();
     this._element.querySelector(".elements__card-image").src = this._link;

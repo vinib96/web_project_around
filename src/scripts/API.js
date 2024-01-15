@@ -41,7 +41,7 @@ export default class Api {
       return Promise.reject(`Error: ${res.status}`);
     });
   }
-  addCard(name, link) {
+  addCard({ name, link }) {
     return fetch(`${this._baseUrl}/cards`, {
       method: "POST",
       headers: this._headers,
@@ -58,9 +58,36 @@ export default class Api {
     });
   }
 
+  editAvatar(avatar) {
+    return fetch(`${this._baseUrl}/users/me/avatar`, {
+      method: "PATCH",
+      headers: this._headers,
+      body: JSON.stringify({ avatar: avatar }),
+    }).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+
+      return Promise.reject(`Error: ${res.status}`);
+    });
+  }
+
   addLikes() {
     return fetch(`${this._baseUrl}/cards/likes/${cardsId}`, {
       method: "PUT",
+      headers: this._headers,
+    }).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+
+      return Promise.reject(`Error: ${res.status}`);
+    });
+  }
+
+  remove() {
+    return fetch(`${this._baseUrl}/cards/${cardId}`, {
+      method: "DELETE",
       headers: this._headers,
     }).then((res) => {
       if (res.ok) {

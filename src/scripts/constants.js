@@ -9,29 +9,8 @@ export const inputAbout = document.querySelector(".popup__input_type_about");
 export const fullImage = document.querySelector(".popup_full");
 export const cardListSelector = document.querySelector(".elements__container");
 
-export const initialCards = [
-  {
-    name: "Vale de Yosemite",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg",
-  },
-  {
-    name: "Lago Louise",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg",
-  },
-  {
-    name: "Montanhas Carecas",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_bald-mountains.jpg",
-  },
-  {
-    name: "Latemar",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_latemar.jpg",
-  },
-  {
-    name: "Parque Nacional da Vanoise ",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_vanoise.jpg",
-  },
-  {
-    name: "Lago di Braies",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg",
-  },
-];
+export const erasePopup = document.querySelector(".popup_erase");
+
+export const avatar = document.querySelector(".popup_changepic");
+export const picButton = document.querySelector(".profile__pic-button");
+export const eraseButton = document.querySelector(".popup__erase-button");

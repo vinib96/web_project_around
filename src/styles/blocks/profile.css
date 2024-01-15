@@ -19,7 +19,8 @@
   border-radius: 50%;
   display: flex;
   align-self: center;
-  width: 170px;
+  width: 135px;
+  height: 130px;
 }
 
 .profile__picture:hover {
