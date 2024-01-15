@@ -70,6 +70,9 @@ const formAddCard = new PopupWithForm({
         });
         const cardElement = cardNew.generateCard();
         document.querySelector(".elements__container").prepend(cardElement);
+      })
+      .catch((err) => {
+        console.log(err);
       });
   },
 });
@@ -84,9 +87,14 @@ const userInfo = new UserInfo({
   avatarSelector: ".profile__picture",
 });
 
-api.getUserInfo().then(({ name, about, avatar }) => {
-  userInfo.setUserInfo(name, about, avatar);
-});
+api
+  .getUserInfo()
+  .then(({ name, about, avatar }) => {
+    userInfo.setUserInfo(name, about, avatar);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 const formProfile = new PopupWithForm({
   popupSelector: popup,
@@ -106,13 +114,17 @@ openFormButton.addEventListener("click", () => {
 const avatarForm = new PopupWithForm({
   popupSelector: avatar,
   handleFormSubmit: ({ avatar }) => {
-    api.editAvatar(avatar);
+    api.editAvatar({
+      avatar: document.querySelector(".popup__input_type_picture").value,
+    });
     userInfo.setUserInfo(avatar);
   },
 });
 avatarForm.setEventListeners();
 
 picButton.addEventListener("click", () => {
+  const { avatar } = userInfo.getUserInfo();
+
   avatarForm.open();
 });
 

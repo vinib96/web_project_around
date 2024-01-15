@@ -1,3 +1,4 @@
+import { popup, addCards, avatar } from "./constants";
 export default class FormValidator {
   constructor(config, formElement) {
     this._config = config;
@@ -77,8 +78,6 @@ export default class FormValidator {
     });
   }
 }
-const addCards = document.querySelector(".popup_add-cards");
-const popup = document.querySelector(".popup_profile");
 
 const profileValid = new FormValidator(
   {
@@ -104,5 +103,18 @@ const addValid = new FormValidator(
   addCards
 );
 
+const picValid = new FormValidator(
+  {
+    formSelector: ".popup__form",
+    inputSelector: ".popup__input",
+    submitButtonSelector: ".popup__submit-button",
+    inactiveButtonClass: "popup__button_disabled",
+    inputErrorClass: "popup__input_type_error",
+    errorClass: "popup__error_visible",
+  },
+  avatar
+);
+
 addValid.enableValidation();
 profileValid.enableValidation();
+picValid.enableValidation();
