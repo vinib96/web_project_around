@@ -99,6 +99,10 @@
   .profile__container {
     flex-direction: column;
   }
+  .profile__pic-button {
+    display: flex;
+    flex-direction: column;
+  }
   .profile__add-button {
     width: 70%;
     margin: 36px 0;

@@ -23,7 +23,7 @@ import {
   eraseButton,
 } from "../src/scripts/constants.js";
 
-const api = new Api({
+export const api = new Api({
   baseUrl: "https://around.nomoreparties.co/v1//web_ptbr_08",
   headers: {
     authorization: "728f9375-e1ce-42d8-ae33-9e03a1e5fb11",
@@ -65,8 +65,8 @@ const formAddCard = new PopupWithForm({
         link: document.querySelector(".popup__input_type_image").value,
       })
       .then((result) => {
-        const cardNew = new Card(result, "#cards", ({ name, link }) => {
-          popupWithImage.open(link.link, name.name);
+        const cardNew = new Card(result, "#cards", (data) => {
+          popupWithImage.open(data.link, data.name);
         });
         const cardElement = cardNew.generateCard();
         document.querySelector(".elements__container").prepend(cardElement);
@@ -100,7 +100,8 @@ const formProfile = new PopupWithForm({
   popupSelector: popup,
   handleFormSubmit: ({ name, about }) => {
     api.editUserInfo(name, about);
-    userInfo.setUserInfo(name, about);
+    const { avatar } = userInfo.getUserInfo();
+    userInfo.setUserInfo(name, about, avatar);
   },
 });
 formProfile.setEventListeners();
@@ -108,25 +109,40 @@ openFormButton.addEventListener("click", () => {
   const { name, about } = userInfo.getUserInfo();
   inputName.value = name;
   inputAbout.value = about;
+
   formProfile.open();
 });
 
 const avatarForm = new PopupWithForm({
   popupSelector: avatar,
-  handleFormSubmit: ({ avatar }) => {
+  handleFormSubmit: ({ image }) => {
     api.editAvatar({
       avatar: document.querySelector(".popup__input_type_picture").value,
     });
-    userInfo.setUserInfo(avatar);
+    const { name, about } = userInfo.getUserInfo();
+    userInfo.setUserInfo(name, about, image);
   },
 });
 avatarForm.setEventListeners();
 
 picButton.addEventListener("click", () => {
-  const { avatar } = userInfo.getUserInfo();
-
   avatarForm.open();
 });
 
-const formConfirmation = new PopupWithConfirmation(erasePopup);
+const formConfirmation = new PopupWithConfirmation({
+  popupSelector: erasePopup,
+  handleFormSubmit: (cardId) => {
+    api
+      .removeCard(cardId)
+      .then(() => {
+        formConfirmation.close();
+        const elementRemove = eraseButton.closest(".elements__cards");
+        elementRemove.remove();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  },
+});
+
 formConfirmation.setEventListeners();

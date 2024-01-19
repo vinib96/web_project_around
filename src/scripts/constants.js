@@ -5,7 +5,7 @@ export const addCards = document.querySelector(".popup_add-cards");
 
 export const inputName = document.querySelector(".popup__input_type_name");
 export const inputAbout = document.querySelector(".popup__input_type_about");
-
+export const inputImage = document.querySelector(".popup__input_type_picture");
 export const fullImage = document.querySelector(".popup_full");
 export const cardListSelector = document.querySelector(".elements__container");
 
