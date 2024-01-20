@@ -1,5 +1,4 @@
 import Popup from "./Popup";
-import Card from "./Card";
 
 export default class PopupWithConfirmation extends Popup {
   constructor({ popupSelector, handleFormSubmit }) {
@@ -7,8 +6,9 @@ export default class PopupWithConfirmation extends Popup {
     this._handleFormSubmit = handleFormSubmit;
   }
 
-  _getId() {
-    this._id = cardId;
+  open(card) {
+    this._card = card;
+    super.open();
   }
 
   setEventListeners() {
@@ -16,10 +16,9 @@ export default class PopupWithConfirmation extends Popup {
 
     this._popupSelector.addEventListener("submit", (evt) => {
       evt.preventDefault();
-      this._handleFormSubmit(this._id);
+      this._handleFormSubmit(this._card).then(() => {
+        this.close();
+      });
     });
   }
 }
-// trashButton = document.querySelector(".elements__trash");
-// const elementRemove = trashButton.closest(".elements__cards");
-// elementRemove.remove();

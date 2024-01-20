@@ -24,7 +24,7 @@ import {
 } from "../src/scripts/constants.js";
 
 export const api = new Api({
-  baseUrl: "https://around.nomoreparties.co/v1//web_ptbr_08",
+  baseUrl: "https://around.nomoreparties.co/v1/web_ptbr_08",
   headers: {
     authorization: "728f9375-e1ce-42d8-ae33-9e03a1e5fb11",
     "Content-Type": "application/json",
@@ -34,6 +34,21 @@ export const api = new Api({
 const popupWithImage = new PopupWithImage(fullImage);
 popupWithImage.setEventListeners();
 
+const formConfirmation = new PopupWithConfirmation({
+  popupSelector: erasePopup,
+  handleFormSubmit: (card) => {
+    return api
+      .removeCard(card._cardId)
+      .then(() => {
+        card.removeElement();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  },
+});
+formConfirmation.setEventListeners();
+
 api
   .getInitialCards()
   .then((result) => {
@@ -41,9 +56,19 @@ api
       {
         items: result,
         renderer: (item) => {
-          const card = new Card(item, "#cards", () => {
-            popupWithImage.open(item.link, item.name);
-          });
+          const card = new Card(
+            item,
+            "#cards",
+            () => {
+              popupWithImage.open(item.link, item.name);
+            },
+            () => {
+              formConfirmation.open(card);
+            },
+            api.addLikes.bind(api),
+            api.removeLikes.bind(api),
+            userInfo.getUserInfo().userId
+          );
           const cardElement = card.generateCard();
           defaultCardList.addItem(cardElement);
         },
@@ -65,9 +90,18 @@ const formAddCard = new PopupWithForm({
         link: document.querySelector(".popup__input_type_image").value,
       })
       .then((result) => {
-        const cardNew = new Card(result, "#cards", (data) => {
-          popupWithImage.open(data.link, data.name);
-        });
+        const cardNew = new Card(
+          result,
+          "#cards",
+          (data) => {
+            popupWithImage.open(data.link, data.name);
+          },
+          () => {
+            formConfirmation.open(cardNew);
+          },
+          api.addLikes.bind(api),
+          api.removeLikes.bind(api)
+        );
         const cardElement = cardNew.generateCard();
         document.querySelector(".elements__container").prepend(cardElement);
       })
@@ -128,21 +162,3 @@ avatarForm.setEventListeners();
 picButton.addEventListener("click", () => {
   avatarForm.open();
 });
-
-const formConfirmation = new PopupWithConfirmation({
-  popupSelector: erasePopup,
-  handleFormSubmit: (cardId) => {
-    api
-      .removeCard(cardId)
-      .then(() => {
-        formConfirmation.close();
-        const elementRemove = eraseButton.closest(".elements__cards");
-        elementRemove.remove();
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  },
-});
-
-formConfirmation.setEventListeners();
