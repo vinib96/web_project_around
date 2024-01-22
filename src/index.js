@@ -48,6 +48,19 @@ const formConfirmation = new PopupWithConfirmation({
   },
 });
 formConfirmation.setEventListeners();
+// const userIdentity = (res)=>{
+// return api.getUserInfo(res._id)
+// }
+
+// const userId = api
+//   .getUserInfo()
+//   .then((res) => {
+//     return res._id;
+//   })
+//   .then(function (value) {
+//     console.log(value);
+//     return `${value}`;
+//   });
 
 api
   .getInitialCards()
@@ -66,8 +79,7 @@ api
               formConfirmation.open(card);
             },
             api.addLikes.bind(api),
-            api.removeLikes.bind(api),
-            userInfo.getUserInfo().userId
+            api.removeLikes.bind(api)
           );
           const cardElement = card.generateCard();
           defaultCardList.addItem(cardElement);
