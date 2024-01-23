@@ -1,5 +1,5 @@
 <h1  align="center">Projeto: "Ao redor dos EUA"</h1> 
-<p>O projeto  <b>"Ao redor dos EUA"</b> (referentes as Sprints de 5 a 9) do curso de <b>"Desenvolvedor Web"</b> da TripleTen consistiu na <b>criação de uma página web onde os usuários podem adicionar, remover, ou curtir fotos</b>. A <b>responsividade</b> foi criada com as técnicas aprendidas na Sprint anterior, como a <b>definição de larguras em porcentagem</b> e o <b>midia querry</b>(especificamente voltados para telas e cada um definindo uma altura máxima). Foi utilizado pela primeira vez o <b>JavaScript</b> para criação das seguintes funcionalidades: </p>
+<p>O projeto  <b>"Ao redor dos EUA"</b> (referentes as Sprints de 5 a 10) do curso de <b>"Desenvolvedor Web"</b> da TripleTen consistiu na <b>criação de uma página web onde os usuários podem adicionar, remover, ou curtir fotos</b>. A <b>responsividade</b> foi criada com as técnicas aprendidas na Sprint anterior, como a <b>definição de larguras em porcentagem</b> e o <b>midia querry</b>(especificamente voltados para telas e cada um definindo uma altura máxima). Foi utilizado pela primeira vez o <b>JavaScript</b> para criação das seguintes funcionalidades: </p>
 <li><b>Adicionar botões para fechamento e abertura dos <i>popups</i> da página;</b></li>
 <li><b>Botões para salvar as alterações dos inputs do formulário e devolve-los a página principal;</b></li>
 <li><b>Botão para excluir o cartão da página e botão para "curtir" a imagem;</b></li>
@@ -10,6 +10,7 @@
 <li><b>Adoção da orientação para objetos na criação de Classes</b></li>
 <li><b>Utilização de módulos e as instruções "import" e "export" ;</b></li>
 <li><b>Implementação de Webpack</b></li>
+<li><b>Criação de uma classe API e conexão do projeto com o servidor</b></li>
 <br>
 <p>Para o posicionamento dos demais itens da página, foram utilizados:</p>
 <li><b>Layout em "grid" com propriedades de áreas;</b></li>
