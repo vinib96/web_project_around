@@ -1,0 +1,14 @@
+@import url(../styles/normalize.css);
+@import url(../styles/fonts/font.css);
+@import url(../styles/blocks/page.css);
+@import url(../styles/blocks/logo.css);
+@import url(../styles/blocks/header.css);
+@import url(../styles/blocks/profile.css);
+@import url(../styles/blocks/popup.css);
+@import url(../styles/blocks/elements.css);
+@import url(../styles/blocks/footer.css);
+
+html,
+body {
+  height: 100%;
+}

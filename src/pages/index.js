@@ -1,13 +1,13 @@
-import "./styles/index.css";
-import Card from "../src/scripts/Card.js";
-import FormValidator from "../src/scripts/FormValidator.js";
-import PopupWithImage from "../src/scripts/PopupWithImage.js";
-import Popup from "../src/scripts/Popup.js";
-import Section from "../src/scripts/Section.js";
-import UserInfo from "../src/scripts/UserInfo.js";
-import PopupWithForm from "../src/scripts/PopupWithForm.js";
-import PopupWithConfirmation from "../src/scripts/PopupWithConfirmation.js";
-import Api from "./scripts/API.js";
+import "../pages/index.css";
+import Card from "../components/Card.js";
+import FormValidator from "../components/FormValidator.js";
+import PopupWithImage from "../components/PopupWithImage.js";
+import Popup from "../components/Popup.js";
+import Section from "../components/Section.js";
+import UserInfo from "../components/UserInfo.js";
+import PopupWithForm from "../components/PopupWithForm.js";
+import PopupWithConfirmation from "../components/PopupWithConfirmation.js";
+import Api from "../components/API.js";
 import {
   popup,
   addCards,
@@ -21,7 +21,7 @@ import {
   avatar,
   picButton,
   eraseButton,
-} from "../src/scripts/constants.js";
+} from "../components/constants.js";
 
 export const api = new Api({
   baseUrl: "https://around.nomoreparties.co/v1/web_ptbr_08",
@@ -48,19 +48,18 @@ const formConfirmation = new PopupWithConfirmation({
   },
 });
 formConfirmation.setEventListeners();
-// const userIdentity = (res)=>{
-// return api.getUserInfo(res._id)
-// }
 
-// const userId = api
-//   .getUserInfo()
-//   .then((res) => {
-//     return res._id;
-//   })
-//   .then(function (value) {
-//     console.log(value);
-//     return `${value}`;
-//   });
+// const userId = () => {
+//   return api
+//     .getUserInfo()
+//     .then((res) => {
+//       res._id;
+//     })
+//     .then((value) => {
+//       console.log(value);
+//       return `${value}`;
+//     });
+// };
 
 api
   .getInitialCards()

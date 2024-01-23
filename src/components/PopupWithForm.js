@@ -23,9 +23,9 @@ export default class PopupWithForm extends Popup {
   _renderLoading(isLoading) {
     if (isLoading) {
       this._submitButton.textContent = "Salvando...";
-    } else {
     }
   }
+
   close() {
     super.close();
     this._popupSelector.querySelector(".popup__form").reset();

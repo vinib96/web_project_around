@@ -43,6 +43,7 @@ export default class Card {
     this._element.querySelector(".elements__text").textContent = this._name;
     this._element.querySelector(".elements__like-counter").textContent =
       this._likes.length;
+
     const remove = () => {
       const myId = "65f3a68ef65151a656ade171";
       if (this.owner === myId) {
@@ -53,6 +54,10 @@ export default class Card {
       }
     };
     remove();
+    if (this.isLiked()) {
+      const likeBtn = this._element.querySelector(".elements__like-button");
+      likeBtn.classList.add("elements__like-button_click");
+    }
 
     return this._element;
   }
@@ -63,13 +68,13 @@ export default class Card {
 
   isLiked() {
     const myId = "65f3a68ef65151a656ade171";
-    for (let i = 0; i < this._likes.length; i++) {
-      if (this._likes[i]._id === myId) {
-        return true;
-      }
-    }
-    return false;
-    // return this._likes.includes(myId);
+    // for (let i = 0; i < this._likes.length; i++) {
+    //   if (this._likes[i]._id === myId) {
+    //     return true;
+    //   }
+    // }
+    // return false;
+    return this._likes.find((res) => res._id === myId);
   }
 
   likeClick() {
@@ -83,6 +88,10 @@ export default class Card {
       if (!this.isLiked()) {
         this._handleAddLike(this._cardId).then((res) => {
           likeBtn.classList.add("elements__like-button_click");
+          const active = this._element.querySelector(
+            ".elements__like-button_click"
+          );
+          localStorage.setItem(active, like);
           numberOfLikesElement.textContent = parseInt(++this._likes.length);
           this._likes = res.likes;
         });
@@ -94,7 +103,10 @@ export default class Card {
         });
       }
     };
-    likeBtn.addEventListener("click", liked);
+    likeBtn.addEventListener("click", liked, () => {
+      const active = likeBtn.classList.add("elements__like-button_click");
+      sessionStorage.getItem(active);
+    });
   }
 
   _remove() {
