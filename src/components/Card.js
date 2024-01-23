@@ -68,12 +68,7 @@ export default class Card {
 
   isLiked() {
     const myId = "65f3a68ef65151a656ade171";
-    // for (let i = 0; i < this._likes.length; i++) {
-    //   if (this._likes[i]._id === myId) {
-    //     return true;
-    //   }
-    // }
-    // return false;
+
     return this._likes.find((res) => res._id === myId);
   }
 

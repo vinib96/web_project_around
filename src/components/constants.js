@@ -13,4 +13,3 @@ export const erasePopup = document.querySelector(".popup_erase");
 
 export const avatar = document.querySelector(".popup_changepic");
 export const picButton = document.querySelector(".profile__pic-button");
-export const eraseButton = document.querySelector(".popup__erase-button");

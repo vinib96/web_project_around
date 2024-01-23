@@ -20,7 +20,6 @@ import {
   erasePopup,
   avatar,
   picButton,
-  eraseButton,
 } from "../components/constants.js";
 
 export const api = new Api({
@@ -48,18 +47,6 @@ const formConfirmation = new PopupWithConfirmation({
   },
 });
 formConfirmation.setEventListeners();
-
-// const userId = () => {
-//   return api
-//     .getUserInfo()
-//     .then((res) => {
-//       res._id;
-//     })
-//     .then((value) => {
-//       console.log(value);
-//       return `${value}`;
-//     });
-// };
 
 api
   .getInitialCards()
