@@ -203,7 +203,7 @@
         </div>
       </section>
       <section class="popup popup_changepic">
-        <div class="popup__container" id="cards-form">
+        <div class="popup__container" id="change-pic">
           <button type="button" class="popup__close-button popup__close-add">
             <img src=<%= require('./styles/images/Close__Icon.png')%> alt="Botão
             de fechar" />
@@ -212,13 +212,13 @@
             <h3 class="popup__title popup__title_erase">
               Alterar a foto de perfil
             </h3>
-            <form class="popup__form" name="remove" id="remove" novalidate>
+            <form class="popup__form" name="remove" novalidate>
               <fieldset class="popup__formset">
                 <label>
                   <input
                     type="url"
                     name="image"
-                    id="image-input"
+                    id="pic-input"
                     class="popup__input popup__input_type_picture"
                     placeholder="Link de imagem"
                     required
