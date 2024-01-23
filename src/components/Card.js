@@ -39,7 +39,7 @@ export default class Card {
 
     this._remove();
     this._element.querySelector(".elements__card-image").src = this._link;
-    this._element.querySelector(".elements__text").alt = this._name;
+    this._element.querySelector(".elements__card-image").alt = this._name;
     this._element.querySelector(".elements__text").textContent = this._name;
     this._element.querySelector(".elements__like-counter").textContent =
       this._likes.length;
