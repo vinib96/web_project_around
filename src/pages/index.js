@@ -48,6 +48,22 @@ const formConfirmation = new PopupWithConfirmation({
 });
 formConfirmation.setEventListeners();
 
+const renderNewCard = (item) => {
+  const card = new Card(
+    item,
+    "#cards",
+    () => {
+      popupWithImage.open(item.link, item.name);
+    },
+    () => {
+      formConfirmation.open(card);
+    },
+    api.addLikes.bind(api),
+    api.removeLikes.bind(api)
+  );
+  return card.generateCard();
+};
+
 api
   .getInitialCards()
   .then((result) => {
@@ -55,20 +71,7 @@ api
       {
         items: result,
         renderer: (item) => {
-          const card = new Card(
-            item,
-            "#cards",
-            () => {
-              popupWithImage.open(item.link, item.name);
-            },
-            () => {
-              formConfirmation.open(card);
-            },
-            api.addLikes.bind(api),
-            api.removeLikes.bind(api)
-          );
-          const cardElement = card.generateCard();
-          defaultCardList.addItem(cardElement);
+          defaultCardList.addItem(renderNewCard(item));
         },
       },
       cardListSelector
@@ -88,20 +91,9 @@ const formAddCard = new PopupWithForm({
         link: document.querySelector(".popup__input_type_image").value,
       })
       .then((result) => {
-        const cardNew = new Card(
-          result,
-          "#cards",
-          (data) => {
-            popupWithImage.open(data.link, data.name);
-          },
-          () => {
-            formConfirmation.open(cardNew);
-          },
-          api.addLikes.bind(api),
-          api.removeLikes.bind(api)
-        );
-        const cardElement = cardNew.generateCard();
-        document.querySelector(".elements__container").prepend(cardElement);
+        document
+          .querySelector(".elements__container")
+          .prepend(renderNewCard(result));
       })
       .catch((err) => {
         console.log(err);
