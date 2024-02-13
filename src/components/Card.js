@@ -86,7 +86,7 @@ export default class Card {
           const active = this._element.querySelector(
             ".elements__like-button_click"
           );
-          localStorage.setItem(active, like);
+          localStorage.setItem(active, liked);
           numberOfLikesElement.textContent = parseInt(++this._likes.length);
           this._likes = res.likes;
         });
