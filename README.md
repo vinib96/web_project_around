@@ -66,6 +66,9 @@ O site pode ser acessado através do [link](https://vinib96.github.io/web_projec
 
 Futuramente será possível utilizar o React.js para melhoria da interface.
 
+## Apêndice
+
+O design utilizado está disponível no [Figma](https://www.figma.com/file/e0lUDoBuWEsFCJ9OQKHypo/Web_Brief_Sprint_5_PT-%7C-Ao-redor-dos-EUA.-%7C-desktop-%2B-mobile?type=design&node-id=0-1&t=KyUBYZhXDZZEHVx0-0).
 
 
 
