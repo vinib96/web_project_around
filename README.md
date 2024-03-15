@@ -1,5 +1,5 @@
 
-# Projeto: "Ao redor dos EUA"
+# PROJETO: "AO REDOR DOS EUA"
 
 O projeto "Ao redor dos EUA" (referentes as Sprints de 5 a 10) do curso de "Desenvolvedor Web" da TripleTen consistiu na criação de uma página web onde os usuários podem adicionar, remover e curtir fotos, bem como editar informações e o avatar de seu perfil. 
 
@@ -34,6 +34,12 @@ A responsividade foi criada com as técnicas aprendidas na Sprint anterior, como
 *Observação: Para o posicionamento dos demais itens da página, foram utilizados layout em "grid" com propriedades de áreas e Flexbox.
 
 
+## Stack utilizada
+
+**Front-end:** HTML, CSS, BEM, JavaScrip (POO).
+
+
+
 
 
 
@@ -55,8 +61,8 @@ api
 
 ## Demonstração
 
-O site pode ser acessado através do link: https://vinib96.github.io/web_project_around/
-## Melhorias futuras:
+O site pode ser acessado através do [link](https://vinib96.github.io/web_project_around/).
+## Roadmap:
 
 Futuramente será possível utilizar o React.js para melhoria da interface.
 
