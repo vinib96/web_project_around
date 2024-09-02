@@ -1,7 +1,7 @@
 
 # PROJETO: "AO REDOR DOS EUA"
 
-O projeto "Ao redor dos EUA" (referentes as Sprints de 5 a 10) do curso de "Desenvolvedor Web" da TripleTen consistiu na criação de uma página web onde os usuários podem adicionar, remover e curtir fotos, bem como editar informações e o avatar de seu perfil. 
+O projeto "Ao Redor dos EUA" (Sprints 5 a 10) do curso de "Desenvolvedor Web" da TripleTen teve como objetivo desenvolver uma página web que permite aos usuários adicionar, remover e curtir fotos, além de editar informações e o avatar de seus perfis. O foco do projeto foi criar uma interface intuitiva e funcional, proporcionando uma experiência de usuário interativa e personalizável. O desenvolvimento resultou em uma página dinâmica e fácil de usar. 
 
 ## Funcionalidades
 
